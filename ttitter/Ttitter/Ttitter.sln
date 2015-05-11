@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{BB845482-591D-4050-8AD4-A6E28220494D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{E0E334F5-B790-4D0C-8B89-5A8DDD4BB273}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{37E9F2AC-E175-43CA-8A18-1968712C0EA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Existing Libraries", "Existing Libraries", "{FF1BD82F-A246-4853-A8E8-E904C218A672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ttitter.Data.Models", "Models\Ttitter.Data.Models.csproj", "{AE43EB15-E386-40B2-98E1-09A1260C327B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TtitterMvc", "TtitterMvc\TtitterMvc.csproj", "{4585FBDD-BE68-48B2-9285-CA0371470029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ttitter.Data.Data", "Ttitter.Data.Data\Ttitter.Data.Data.csproj", "{8E152E26-418E-4243-9850-B43503F98A4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE43EB15-E386-40B2-98E1-09A1260C327B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE43EB15-E386-40B2-98E1-09A1260C327B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE43EB15-E386-40B2-98E1-09A1260C327B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE43EB15-E386-40B2-98E1-09A1260C327B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4585FBDD-BE68-48B2-9285-CA0371470029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4585FBDD-BE68-48B2-9285-CA0371470029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4585FBDD-BE68-48B2-9285-CA0371470029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4585FBDD-BE68-48B2-9285-CA0371470029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E152E26-418E-4243-9850-B43503F98A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E152E26-418E-4243-9850-B43503F98A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E152E26-418E-4243-9850-B43503F98A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E152E26-418E-4243-9850-B43503F98A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE43EB15-E386-40B2-98E1-09A1260C327B} = {BB845482-591D-4050-8AD4-A6E28220494D}
+		{4585FBDD-BE68-48B2-9285-CA0371470029} = {E0E334F5-B790-4D0C-8B89-5A8DDD4BB273}
+		{8E152E26-418E-4243-9850-B43503F98A4A} = {BB845482-591D-4050-8AD4-A6E28220494D}
+	EndGlobalSection
+EndGlobal
