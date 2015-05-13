@@ -30,9 +30,9 @@
             get { return this.GetRepository<Profile>(); }
         }
 
-        public ITtitterRepository<Tweet> Tweets
+        public ITtitterRepository<Tteet> Tteets
         {
-            get { return this.GetRepository<Tweet>(); }
+            get { return this.GetRepository<Tteet>(); }
         }
 
         public ITtitterRepository<Message> Messages

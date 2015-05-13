@@ -18,7 +18,7 @@
 
         public IDbSet<Profile> Profiles { get; set; }
 
-        public IDbSet<Tweet> Tweets { get; set; }
+        public IDbSet<Tteet> Tteets { get; set; }
 
         public IDbSet<Message> Messages { get; set; }
 
@@ -37,6 +37,45 @@
                 .WithMany(s => s.SentMessages)
                 .WillCascadeOnDelete(false);
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
+            modelBuilder.Entity<Profile>()
+                .HasMany<Tteet>(p => p.FavouriteTteets)
+                .WithMany(t => t.FavourizingProfiles)
+                .Map(pt => {
+                    pt.MapLeftKey("ProfileId");
+                    pt.MapRightKey("FavouriteTteetId");
+                    pt.ToTable("ProfilesFavouriteTteets");
+                });
+
+            modelBuilder.Entity<Profile>()
+                .HasMany<Tteet>(p => p.RetteetedTteets)
+                .WithMany(t => t.RetteetingProfiles)
+                .Map(pt =>
+                {
+                    pt.MapLeftKey("ProfileId");
+                    pt.MapRightKey("RetteetedTteetId");
+                    pt.ToTable("ProfilesRetteetedTteets");
+                });
+
+            modelBuilder.Entity<Profile>()
+                .HasMany<Tteet>(p => p.ReportedTteets)
+                .WithMany(t => t.ReportingProfiles)
+                .Map(pt =>
+                {
+                    pt.MapLeftKey("ProfileId");
+                    pt.MapRightKey("ReportedTteetId");
+                    pt.ToTable("ProfilesReportedTteets");
+                });
+
+            modelBuilder.Entity<Profile>()
+                .HasMany<Tteet>(p => p.FbSharedTteets)
+                .WithMany(t => t.FbSharingProfiles)
+                .Map(pt =>
+                {
+                    pt.MapLeftKey("ProfileId");
+                    pt.MapRightKey("FbSharedTteetId");
+                    pt.ToTable("ProfilesFbSharedTteets");
+                });
         }
     }
 }

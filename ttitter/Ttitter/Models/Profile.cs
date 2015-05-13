@@ -7,10 +7,10 @@
 
     public class Profile
     {
-        ICollection<Tweet> retweetedTweets;
-        ICollection<Tweet> favourizedTweets;
-        ICollection<Tweet> reportedTweets;
-        ICollection<Tweet> fbSharedTweets;
+        ICollection<Tteet> retteetedTteets;
+        ICollection<Tteet> favouriteTteets;
+        ICollection<Tteet> reportedTteets;
+        ICollection<Tteet> fbSharedTteets;
         ICollection<Profile> followers;
         ICollection<Profile> followed;
         ICollection<Message> sentMessages;
@@ -20,10 +20,10 @@
         public Profile()
         {
             this.Id = Guid.NewGuid();
-            this.retweetedTweets = new HashSet<Tweet>();
-            this.favourizedTweets = new HashSet<Tweet>();
-            this.reportedTweets = new HashSet<Tweet>();
-            this.fbSharedTweets = new HashSet<Tweet>();
+            this.retteetedTteets = new HashSet<Tteet>();
+            this.favouriteTteets = new HashSet<Tteet>();
+            this.reportedTteets = new HashSet<Tteet>();
+            this.fbSharedTteets = new HashSet<Tteet>();
             this.followed = new HashSet<Profile>();
             this.followers = new HashSet<Profile>();
             this.sentMessages = new HashSet<Message>();
@@ -53,32 +53,36 @@
 
         public string TimeZoneId { get; set; }
 
-        [InverseProperty("RetweetingProfiles")]
-        public virtual ICollection<Tweet> RetweetedTweets
+        [Column("RetteetedTteets")]
+        [InverseProperty("RetteetingProfiles")]
+        public virtual ICollection<Tteet> RetteetedTteets
         {
-            get { return this.retweetedTweets; }
-            set { this.retweetedTweets = value; }
+            get { return this.retteetedTteets; }
+            set { this.retteetedTteets = value; }
         }
 
+        [Column("FavouriteTteets")]
           [InverseProperty("FavourizingProfiles")]
-        public virtual ICollection<Tweet> FavourizedTweets
+        public virtual ICollection<Tteet> FavouriteTteets
         {
-            get { return this.favourizedTweets; }
-            set { this.favourizedTweets = value; }
+            get { return this.favouriteTteets; }
+            set { this.favouriteTteets = value; }
         }
 
+        [Column("ReportedTteets")]
         [InverseProperty("ReportingProfiles")]
-        public virtual ICollection<Tweet> ReportedTweets
+        public virtual ICollection<Tteet> ReportedTteets
         {
-            get { return this.reportedTweets; }
-            set { this.reportedTweets = value; }
+            get { return this.reportedTteets; }
+            set { this.reportedTteets = value; }
         }
 
+        [Column("FbSharedTteets")]
         [InverseProperty("FbSharingProfiles")]
-        public virtual ICollection<Tweet> FbSharedTweets
+        public virtual ICollection<Tteet> FbSharedTteets
         {
-            get { return this.fbSharedTweets; }
-            set { this.fbSharedTweets = value; }
+            get { return this.fbSharedTteets; }
+            set { this.fbSharedTteets = value; }
         }
 
         public virtual ICollection<Profile> Followers
@@ -93,12 +97,16 @@
             set { this.followed = value; }
         }
 
+        [Column("SentMessages")]
+        [InverseProperty("SenderProfile")]
         public virtual ICollection<Message> SentMessages
         {
             get { return this.sentMessages; }
             set { this.sentMessages = value; }
         }
 
+        [Column("ReceivedMessages")]
+        [InverseProperty("ReceiverProfile")]
         public virtual ICollection<Message> ReceivedMessages
         {
             get { return this.receivedMessages; }

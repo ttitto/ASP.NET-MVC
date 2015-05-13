@@ -66,7 +66,7 @@
     <Compile Include="Profile.cs" />
     <Compile Include="ProfileStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tweet.cs" />
+    <Compile Include="Tteet.cs" />
     <Compile Include="User.cs" />
     <Compile Include="VisibilityStatus.cs" />
   </ItemGroup>

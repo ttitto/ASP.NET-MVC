@@ -7,7 +7,7 @@
     {
         ITtitterRepository<Profile> Profiles { get; }
 
-        ITtitterRepository<Tweet> Tweets { get; }
+        ITtitterRepository<Tteet> Tteets { get; }
 
         ITtitterRepository<Message> Messages { get; }
 

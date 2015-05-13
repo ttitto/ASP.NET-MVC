@@ -2,8 +2,8 @@
 {
     public enum NotificationCase
     {
-        Retweet,
-        FavouriteTweetSelected,
+        Retteet,
+        FavouriteTteetSelected,
         NewFollower
     }
 }

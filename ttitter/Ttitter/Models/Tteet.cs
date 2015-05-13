@@ -5,20 +5,22 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Tweet
+    public class Tteet
     {
-        ICollection<Profile> retweetingProfiles;
+        ICollection<Profile> retteetingProfiles;
         ICollection<Profile> favourizingProfiles;
         ICollection<Profile> reportingProfiles;
         ICollection<Profile> fbSharingProfiles;
+        ICollection<Tteet> tteetReplies;
 
-        public Tweet()
+        public Tteet()
         {
             this.Id = Guid.NewGuid();
-            this.retweetingProfiles = new HashSet<Profile>();
+            this.retteetingProfiles = new HashSet<Profile>();
             this.favourizingProfiles = new HashSet<Profile>();
             this.reportingProfiles = new HashSet<Profile>();
             this.fbSharingProfiles = new HashSet<Profile>();
+            this.tteetReplies = new HashSet<Tteet>();
         }
 
         [Required]
@@ -37,41 +39,52 @@
         [Required]
         public DateTime CreatedOn { get; set; }
 
-        public DateTime LastEditedOn { get; set; }
+        public DateTime? LastEditedOn { get; set; }
 
         public Guid RepliesToId { get; set; }
 
         [ForeignKey("RepliesToId")]
-        public virtual Tweet RepliesTo { get; set; }
+        public virtual Tteet RepliesTo { get; set; }
 
         [Required]
         public string Url { get; set; }
 
-        [InverseProperty("RetweetedTweets")]
-        public virtual ICollection<Profile> RetweetingProfiles {
-            get { return this.retweetingProfiles; }
-            set { this.retweetingProfiles = value; }
+        [Column("RetteetingProfiles")]
+        [InverseProperty("RetteetedTteets")]
+        public virtual ICollection<Profile> RetteetingProfiles {
+            get { return this.retteetingProfiles; }
+            set { this.retteetingProfiles = value; }
         }
 
-        [InverseProperty("FavourizedTweets")]
+        [Column("FavourizingProfiles")]
+        [InverseProperty("FavouriteTteets")]
         public virtual ICollection<Profile> FavourizingProfiles
         {
             get { return this.favourizingProfiles; }
             set { this.favourizingProfiles = value; }
         }
 
-        [InverseProperty("ReportedTweets")]
+        [Column("ReportingProfiles")]
+        [InverseProperty("ReportedTteets")]
         public virtual ICollection<Profile> ReportingProfiles
         {
             get { return this.reportingProfiles; }
             set { this.reportingProfiles = value; }
         }
 
-        [InverseProperty("FbSharedTweets")]
+        [Column("FbSharingProfiles")]
+        [InverseProperty("FbSharedTteets")]
         public virtual ICollection<Profile> FbSharingProfiles
         {
             get { return this.fbSharingProfiles; }
             set { this.fbSharingProfiles = value; }
+        }
+
+        [Column("TteetReplies")]
+        public virtual ICollection<Tteet> TteetReplies
+        {
+            get { return this.tteetReplies; }
+            set { this.tteetReplies = value; }
         }
     }
 }
