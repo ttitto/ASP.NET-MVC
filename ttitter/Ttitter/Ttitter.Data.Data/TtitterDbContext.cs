@@ -24,24 +24,40 @@
 
         public IDbSet<Notification> Notifications { get; set; }
 
+        public IDbSet<Image> Images { get; set; }
+
         public static TtitterDbContext Create()
         {
             return new TtitterDbContext();
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Message>()
-                .HasRequired(m => m.SenderProfile)
-                .WithMany(s => s.SentMessages)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Message>()
+            //    .HasRequired(m => m.SenderProfile)
+            //    .WithMany(s => s.SentMessages)
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Tteet>()
+            //    .HasOptional(t => t.Image)
+            //    .WithMany(i => i.Tteets)
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Profile>()
+            //    .HasOptional(p => p.Image)
+            //    .WithMany(i => i.Profiles)
+            //    .WillCascadeOnDelete(false);
+
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             modelBuilder.Entity<Profile>()
                 .HasMany<Tteet>(p => p.FavouriteTteets)
                 .WithMany(t => t.FavourizingProfiles)
-                .Map(pt => {
+                .Map(pt =>
+                {
                     pt.MapLeftKey("ProfileId");
                     pt.MapRightKey("FavouriteTteetId");
                     pt.ToTable("ProfilesFavouriteTteets");

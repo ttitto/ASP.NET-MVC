@@ -16,15 +16,6 @@ namespace Ttitter.Data.Data.Migrations
         
         protected override void Seed(TtitterDbContext context)
         {
-            User pesho = new User();
-            pesho.Id = Guid.NewGuid().ToString();
-            pesho.UserName = "pesho";
-            pesho.Country = Country.Bulgaria;
-            pesho.Email = "pesho@pesho.com";
-            
-
-            context.Users.AddOrUpdate(pesho);
-            context.SaveChanges();
         }
     }
 }

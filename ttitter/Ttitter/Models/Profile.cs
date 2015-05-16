@@ -39,7 +39,10 @@
 
         public virtual User User { get; set; }
 
-        public string Image { get; set; }
+        public int ImageId { get; set; }
+
+        [ForeignKey("ImageId")]
+        public virtual Image Image { get; set; }
 
         [Required]
         public ProfileStatus Status { get; set; }
@@ -62,7 +65,7 @@
         }
 
         [Column("FavouriteTteets")]
-          [InverseProperty("FavourizingProfiles")]
+        [InverseProperty("FavourizingProfiles")]
         public virtual ICollection<Tteet> FavouriteTteets
         {
             get { return this.favouriteTteets; }

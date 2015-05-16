@@ -46,12 +46,18 @@
         [ForeignKey("RepliesToId")]
         public virtual Tteet RepliesTo { get; set; }
 
+        public int ImageId { get; set; }
+
+        [ForeignKey("ImageId")]
+        public virtual Image Image { get; set; }
+
         [Required]
         public string Url { get; set; }
 
         [Column("RetteetingProfiles")]
         [InverseProperty("RetteetedTteets")]
-        public virtual ICollection<Profile> RetteetingProfiles {
+        public virtual ICollection<Profile> RetteetingProfiles
+        {
             get { return this.retteetingProfiles; }
             set { this.retteetingProfiles = value; }
         }

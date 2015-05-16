@@ -45,6 +45,11 @@
             get { return this.GetRepository<Notification>(); }
         }
 
+        public ITtitterRepository<Image> Images
+        {
+            get { return this.GetRepository<Image>(); }
+        }
+
         public int SaveChanges()
         {
             return this.context.SaveChanges();
