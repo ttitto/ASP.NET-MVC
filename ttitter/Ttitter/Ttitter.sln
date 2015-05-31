@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TtitterMvc", "TtitterMvc\Tt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ttitter.Data.Data", "Ttitter.Data.Data\Ttitter.Data.Data.csproj", "{8E152E26-418E-4243-9850-B43503F98A4A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C3BB1796-833D-4B67-B3D1-C47BD0CCC495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ttitter.Common", "Ttitter.Common\Ttitter.Common.csproj", "{57F4D9EE-D02E-4AA2-8EE9-415231C42FCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{8E152E26-418E-4243-9850-B43503F98A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E152E26-418E-4243-9850-B43503F98A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E152E26-418E-4243-9850-B43503F98A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F4D9EE-D02E-4AA2-8EE9-415231C42FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F4D9EE-D02E-4AA2-8EE9-415231C42FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F4D9EE-D02E-4AA2-8EE9-415231C42FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F4D9EE-D02E-4AA2-8EE9-415231C42FCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +51,6 @@ Global
 		{AE43EB15-E386-40B2-98E1-09A1260C327B} = {BB845482-591D-4050-8AD4-A6E28220494D}
 		{4585FBDD-BE68-48B2-9285-CA0371470029} = {E0E334F5-B790-4D0C-8B89-5A8DDD4BB273}
 		{8E152E26-418E-4243-9850-B43503F98A4A} = {BB845482-591D-4050-8AD4-A6E28220494D}
+		{57F4D9EE-D02E-4AA2-8EE9-415231C42FCD} = {C3BB1796-833D-4B67-B3D1-C47BD0CCC495}
 	EndGlobalSection
 EndGlobal

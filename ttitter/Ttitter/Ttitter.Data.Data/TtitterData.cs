@@ -3,9 +3,11 @@
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
+    using System.Data.Entity.Validation;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+
     using Ttitter.Data.Data.Repositories;
     using Ttitter.Data.Models;
 
@@ -50,9 +52,14 @@
             get { return this.GetRepository<Image>(); }
         }
 
-        public int SaveChanges()
+        public virtual int SaveChanges()
         {
             return this.context.SaveChanges();
+        }
+
+        public IEnumerable<DbEntityValidationResult> GetValidationErrors()
+        {
+            return this.context.GetValidationErrors();
         }
 
         private ITtitterRepository<T> GetRepository<T>() where T : class

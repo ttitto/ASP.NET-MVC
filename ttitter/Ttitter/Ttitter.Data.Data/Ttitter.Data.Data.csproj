@@ -84,6 +84,22 @@
       <Project>{ae43eb15-e386-40b2-98e1-09a1260c327b}</Project>
       <Name>Ttitter.Data.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ttitter.Common\Ttitter.Common.csproj">
+      <Project>{57f4d9ee-d02e-4aa2-8ee9-415231c42fcd}</Project>
+      <Name>Ttitter.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Migrations\Images\profile\1.jpg" />
+    <Content Include="Migrations\Images\profile\2.jpg" />
+    <Content Include="Migrations\Images\profile\3.jpg" />
+    <Content Include="Migrations\Images\profile\4.jpg" />
+    <Content Include="Migrations\Images\tteet\1.jpg" />
+    <Content Include="Migrations\Images\tteet\2.jpg" />
+    <Content Include="Migrations\Images\tteet\3.jpg" />
+    <Content Include="Migrations\Images\tteet\4.jpg" />
+    <Content Include="Migrations\Images\tteet\5.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />

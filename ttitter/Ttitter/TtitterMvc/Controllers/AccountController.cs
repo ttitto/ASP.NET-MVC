@@ -10,26 +10,26 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using TtitterMvc.Models;
+using TtitterMvc.ViewModels;
 using Ttitter.Data.Models;
+using Ttitter.Data.Data;
+using TtitterMvc.Infrastructure.Services.Contracts;
 
 namespace TtitterMvc.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private ApplicationUserManager _userManager;
 
-        public AccountController()
-        {
-        }
-
-        public AccountController(ApplicationUserManager userManager)
+        public AccountController(ApplicationUserManager userManager, IBaseService baseService)
+            : base(baseService)
         {
             UserManager = userManager;
         }
 
-        public ApplicationUserManager UserManager {
+        public ApplicationUserManager UserManager
+        {
             get
             {
                 return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -58,7 +58,7 @@ namespace TtitterMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindAsync(model.Email, model.Password);
+                var user = await UserManager.FindAsync(model.Username, model.Password);
                 if (user != null)
                 {
                     await SignInAsync(user, model.RememberMe);
@@ -91,7 +91,7 @@ namespace TtitterMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User() { UserName = model.Email, Email = model.Email };
+                var user = new User() { UserName = model.Username, Email = model.Email };
                 IdentityResult result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -120,7 +120,7 @@ namespace TtitterMvc.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
-            if (userId == null || code == null) 
+            if (userId == null || code == null)
             {
                 return View("Error");
             }
@@ -180,13 +180,13 @@ namespace TtitterMvc.Controllers
         {
             return View();
         }
-	
+
         //
         // GET: /Account/ResetPassword
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
-            if (code == null) 
+            if (code == null)
             {
                 return View("Error");
             }
@@ -414,13 +414,13 @@ namespace TtitterMvc.Controllers
                     if (result.Succeeded)
                     {
                         await SignInAsync(user, isPersistent: false);
-                        
+
                         // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                         // Send an email with this link
                         // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                         // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                         // SendEmail(user.Email, callbackUrl, "Confirm your account", "Please confirm your account by clicking this link");
-                        
+
                         return RedirectToLocal(returnUrl);
                     }
                 }
@@ -527,10 +527,11 @@ namespace TtitterMvc.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-
+        
         private class ChallengeResult : HttpUnauthorizedResult
         {
-            public ChallengeResult(string provider, string redirectUri) : this(provider, redirectUri, null)
+            public ChallengeResult(string provider, string redirectUri)
+                : this(provider, redirectUri, null)
             {
             }
 

@@ -9,7 +9,7 @@ using Owin;
 using System;
 using Ttitter.Data.Data;
 using Ttitter.Data.Models;
-using TtitterMvc.Models;
+using TtitterMvc.ViewModels;
 
 namespace TtitterMvc
 {

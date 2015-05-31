@@ -2,12 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Image
+    public class Image : BaseModel
     {
         private ICollection<Profile> profiles;
         private ICollection<Tteet> tteets;
@@ -37,6 +38,11 @@
         {
             get { return this.tteets; }
             set { this.tteets = value; }
+        }
+
+        protected override IEnumerable<ValidationResult> ValidateModel(ValidationContext validationContext)
+        {
+            return base.ValidateModel(validationContext);
         }
     }
 }

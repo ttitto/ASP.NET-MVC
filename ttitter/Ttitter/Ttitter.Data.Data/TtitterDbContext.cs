@@ -54,6 +54,16 @@
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             modelBuilder.Entity<Profile>()
+               .HasMany<Profile>(p => p.Followed)
+               .WithMany(p => p.Followers)
+               .Map(pt =>
+               {
+                   pt.MapLeftKey("FollowedId");
+                   pt.MapRightKey("FollowerId");
+                   pt.ToTable("FollowedProfilesFollowersProfiles");
+               });
+
+            modelBuilder.Entity<Profile>()
                 .HasMany<Tteet>(p => p.FavouriteTteets)
                 .WithMany(t => t.FavourizingProfiles)
                 .Map(pt =>

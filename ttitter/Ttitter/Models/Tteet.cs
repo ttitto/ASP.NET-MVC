@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Tteet
+    public class Tteet : BaseModel
     {
         ICollection<Profile> retteetingProfiles;
         ICollection<Profile> favourizingProfiles;
@@ -15,7 +15,6 @@
 
         public Tteet()
         {
-            this.Id = Guid.NewGuid();
             this.retteetingProfiles = new HashSet<Profile>();
             this.favourizingProfiles = new HashSet<Profile>();
             this.reportingProfiles = new HashSet<Profile>();
@@ -24,7 +23,7 @@
         }
 
         [Required]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MinLength(100)]
@@ -32,7 +31,7 @@
         public string Content { get; set; }
 
         [Required]
-        public Guid ProfileId { get; set; }
+        public int ProfileId { get; set; }
 
         public virtual Profile Profile { get; set; }
 
@@ -41,18 +40,15 @@
 
         public DateTime? LastEditedOn { get; set; }
 
-        public Guid RepliesToId { get; set; }
+        public int? RepliesToId { get; set; }
 
         [ForeignKey("RepliesToId")]
         public virtual Tteet RepliesTo { get; set; }
 
-        public int ImageId { get; set; }
+        public int? ImageId { get; set; }
 
         [ForeignKey("ImageId")]
         public virtual Image Image { get; set; }
-
-        [Required]
-        public string Url { get; set; }
 
         [Column("RetteetingProfiles")]
         [InverseProperty("RetteetedTteets")]
@@ -91,6 +87,20 @@
         {
             get { return this.tteetReplies; }
             set { this.tteetReplies = value; }
+        }
+
+        protected override IEnumerable<ValidationResult> ValidateModel(ValidationContext validationContext)
+        {
+            var baseCollection = base.ValidateModel(validationContext);
+            foreach (var item in baseCollection)
+            {
+                yield return item;
+            }
+
+            if (this.CreatedOn > this.LastEditedOn)
+            {
+                yield return new ValidationResult("A Tteet can not be edited before it was been created.", new[] { "LastEditedOn" });
+            }
         }
     }
 }

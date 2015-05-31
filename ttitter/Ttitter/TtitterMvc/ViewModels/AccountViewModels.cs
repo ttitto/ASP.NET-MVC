@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TtitterMvc.Models
+namespace TtitterMvc.ViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -37,10 +37,13 @@ namespace TtitterMvc.Models
 
     public class LoginViewModel
     {
-        [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -55,8 +58,12 @@ namespace TtitterMvc.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

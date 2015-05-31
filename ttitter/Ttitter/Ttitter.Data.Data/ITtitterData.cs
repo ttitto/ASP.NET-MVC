@@ -1,5 +1,8 @@
 ﻿namespace Ttitter.Data.Data
 {
+    using System.Collections.Generic;
+    using System.Data.Entity.Validation;
+
     using Ttitter.Data.Data.Repositories;
     using Ttitter.Data.Models;
 
@@ -12,6 +15,10 @@
         ITtitterRepository<Message> Messages { get; }
 
         ITtitterRepository<Notification> Notifications { get; }
+
+        ITtitterRepository<User> Users { get; }
+
+        IEnumerable<DbEntityValidationResult> GetValidationErrors();
 
         int SaveChanges();
     }

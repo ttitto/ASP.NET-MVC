@@ -5,9 +5,16 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
+    using Ttitter.Data.Data;
+    using TtitterMvc.Infrastructure.Services.Contracts;
 
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
+        public UsersController(IBaseService baseService)
+            : base(baseService)
+        {
+        }
+
         // GET: Users
         public ActionResult Index()
         {

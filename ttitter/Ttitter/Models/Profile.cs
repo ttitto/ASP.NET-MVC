@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Profile
+    public class Profile :BaseModel
     {
         ICollection<Tteet> retteetedTteets;
         ICollection<Tteet> favouriteTteets;
@@ -19,7 +19,6 @@
 
         public Profile()
         {
-            this.Id = Guid.NewGuid();
             this.retteetedTteets = new HashSet<Tteet>();
             this.favouriteTteets = new HashSet<Tteet>();
             this.reportedTteets = new HashSet<Tteet>();
@@ -31,23 +30,28 @@
             this.receivedNotifications = new HashSet<Notification>();
         }
 
-        [Required]
-        public Guid Id { get; set; }
+        [Required(ErrorMessageResourceName="Id", ErrorMessage="Profile Id is required")]
+        [Key]
+        public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName="Name", ErrorMessage="Profile Name is required")]
+        [StringLength(40, MinimumLength = 5, ErrorMessage="Profile Name should be between 5 and 40 characters")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessageResourceName = "UserId", ErrorMessage = "Profile UserId is required")]
         public string UserId { get; set; }
 
         public virtual User User { get; set; }
 
-        public int ImageId { get; set; }
+        public int? ImageId { get; set; }
 
         [ForeignKey("ImageId")]
         public virtual Image Image { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "Status", ErrorMessage = "Profile Status is required")]
         public ProfileStatus Status { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "Visibility", ErrorMessage = "Profile Visibility is required")]
         public VisibilityStatus Visibility { get; set; }
 
         public Country Country { get; set; }
@@ -88,12 +92,14 @@
             set { this.fbSharedTteets = value; }
         }
 
+        [InverseProperty("Followed")]
         public virtual ICollection<Profile> Followers
         {
             get { return this.followers; }
             set { this.followers = value; }
         }
 
+        [InverseProperty("Followers")]
         public virtual ICollection<Profile> Followed
         {
             get { return this.followed; }
@@ -120,6 +126,11 @@
         {
             get { return this.receivedNotifications; }
             set { this.receivedNotifications = value; }
+        }
+
+        protected override IEnumerable<ValidationResult> ValidateModel(ValidationContext validationContext)
+        {
+            return base.ValidateModel(validationContext);
         }
     }
 }

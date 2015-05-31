@@ -11,21 +11,29 @@ namespace TtitterMvc.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Ttitter.Data.Data;
+    using Microsoft.AspNet.Identity;
+    using Ttitter.Data.Models;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using TtitterMvc.Infrastructure.Services.Contracts;
+    using TtitterMvc.Infrastructure.Services.Profiles;
+    using TtitterMvc.Infrastructure.Services.Account;
+    using TtitterMvc.Infrastructure.Services.Base;
+    using TtitterMvc.Infrastructure.Services.Home;
 
-    public static class NinjectWebCommon 
+    public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
         /// </summary>
-        public static void Start() 
+        public static void Start()
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-        
+
         /// <summary>
         /// Stops the application.
         /// </summary>
@@ -33,7 +41,7 @@ namespace TtitterMvc.App_Start
         {
             bootstrapper.ShutDown();
         }
-        
+
         /// <summary>
         /// Creates the kernel that will manage your application.
         /// </summary>
@@ -63,8 +71,14 @@ namespace TtitterMvc.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ITtitterData>().To<TtitterData>().WithConstructorArgument("context", new TtitterDbContext());
+            kernel.Bind<IUserStore<User>>().To<UserStore<User>>().WithConstructorArgument("context", new TtitterDbContext());
+            kernel.Bind<IBaseService>().To<BaseService>().WithConstructorArgument("data", new TtitterData(new TtitterDbContext()));
+            kernel.Bind<IHomeService>().To<HomeService>().WithConstructorArgument("data", new TtitterData(new TtitterDbContext()));
+            kernel.Bind<IProfileService>().To<ProfilesService>().WithConstructorArgument("data", new TtitterData(new TtitterDbContext()));
+            kernel.Bind<IAccountService>().To<AccountService>().WithConstructorArgument("data", new TtitterData(new TtitterDbContext()));
+
             //kernel.Bind<IUserProvider>().To<AspNetUserProvider>();
             // TODO: Add here more ninject bindings
-        }        
+        }
     }
 }

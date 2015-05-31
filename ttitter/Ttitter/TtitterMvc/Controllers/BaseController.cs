@@ -2,24 +2,47 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
     using Ttitter.Data.Data;
+    using TtitterMvc.Infrastructure.Services.Contracts;
 
     public abstract class BaseController : Controller
     {
-        ITtitterData ttitterData;
+        IBaseService baseService;
 
-        public BaseController(ITtitterData ttitterData)
+        public BaseController(IBaseService baseService)
         {
-            this.ttitterData = ttitterData;
+            this.baseService = baseService;
         }
 
-        protected ITtitterData TtitterData
+        protected virtual void ApplyErrorsToModelState(object model, Controller controller)
         {
-            get { return this.ttitterData; }
-        }
+            ICollection<ValidationResult> validationResults = new List<ValidationResult>();
+            var validationContext = new ValidationContext(model);
 
+            // DataAnnotation validation
+            Validator.TryValidateObject(model, validationContext, validationResults, true);
+
+
+            // IValidatableObject validation
+            var validatable = model as IValidatableObject;
+            if (null != validatable)
+            {
+                var errors = validatable.Validate(new ValidationContext(controller));
+                validationResults.Concat(errors);
+
+            }
+
+            foreach (var validationResult in validationResults)
+            {
+                foreach (var memberName in validationResult.MemberNames)
+                {
+                   ModelState.AddModelError(memberName, validationResult.ErrorMessage);
+                }
+            }
+        }
     }
 }

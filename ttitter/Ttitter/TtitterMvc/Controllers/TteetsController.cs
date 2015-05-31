@@ -7,12 +7,16 @@
     using System.Web.Mvc;
 
     using Ttitter.Data.Data;
+    using TtitterMvc.Infrastructure.Services.Contracts;
 
     public class TteetsController : BaseController
     {
-        public TteetsController(ITtitterData ttitterData)
-            :base(ttitterData)
+        private ITteetService tteetService;
+
+        public TteetsController(IBaseService baseService, ITteetService tteetService)
+            : base(baseService)
         {
+            this.tteetService = tteetService;
         }
 
         // GET: Tteets

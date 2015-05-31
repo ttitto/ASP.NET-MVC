@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace TtitterMvc.Controllers
+﻿namespace TtitterMvc.Controllers
 {
-    public class MessagesController : Controller
+    using System.Web.Mvc;
+    using TtitterMvc.Infrastructure.Services.Contracts;
+
+    public class MessagesController : BaseController
     {
+        IMessageService messageService;
+
+        public MessagesController(IBaseService baseService, IMessageService messageService)
+            : base(baseService)
+        {
+            this.messageService = messageService;
+        }
+
         // GET: Messages
         public ActionResult Index()
         {

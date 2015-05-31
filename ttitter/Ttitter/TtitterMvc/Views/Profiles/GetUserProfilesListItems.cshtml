@@ -1,0 +1,21 @@
+﻿@model TtitterMvc.ViewModels.Profiles.ProfileListItemViewModel
+
+@Html.LabelFor(plivm => plivm.ProfileId)
+<br />
+@Html.DropDownListFor(plivm => plivm.ProfileId, Model.Profiles, new { id = "ddl-active-profile" })
+
+<script type="text/javascript">
+    $(function () {
+        $('#ddl-active-profile').change(function () {
+            alert($('#ddl-active-profile').val());
+            $.post('/profiles/active', { profileId: $('#ddl-active-profile').val() })
+                .done(function (successData) {
+                    window.location.reload();
+                })
+                .fail(function (errorData) {
+                    alert(JSON.stringify(errorData));
+                    window.location.reload();
+                });
+        });
+    });
+</script>

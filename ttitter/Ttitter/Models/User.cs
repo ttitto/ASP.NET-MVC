@@ -2,11 +2,15 @@
 {
     using System.Security.Claims;
     using System.Threading.Tasks;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Collections.ObjectModel;
 
-    public class User : IdentityUser
+    public class User : IdentityUser, IValidatableObject
     {
         private ICollection<Profile> profiles;
 
@@ -15,6 +19,8 @@
         {
             this.profiles = new HashSet<Profile>();
         }
+
+        public int? SelectedProfileId { get; set; }
 
         public Country Country { get; set; }
 
@@ -34,6 +40,11 @@
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+        }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return new Collection<ValidationResult>();
         }
     }
 }

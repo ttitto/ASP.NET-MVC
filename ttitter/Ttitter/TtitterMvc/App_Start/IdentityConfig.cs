@@ -3,7 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using TtitterMvc.Models;
+using TtitterMvc.ViewModels;
 using Ttitter.Data.Models;
 using Ttitter.Data.Data;
 
