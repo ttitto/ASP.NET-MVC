@@ -29,21 +29,15 @@
 
         public void SetActiveProfileToUser(int profileId)
         {
-            // TODO: Get the current user from a service           
             var currentUser = this.GetCurrentApplicationUser();
 
-            // TODO: Validate in a service if is possible to have a profile with the passed Id
-            var profile = this.Data.Profiles.Find(profileId);
-            if (profile.UserId != currentUser.Id)
-            {
-                throw new ValidationErrors(new GeneralError(string.Format("There is no Profile with Id {0} assigned to the current User.", profileId)));
-            }
             if (!currentUser.Profiles.Any(p => p.Id == profileId))
             {
                 throw new ValidationErrors(new GeneralError(string.Format("There is no Profile with Id {0} assigned to the current User.", profileId)));
             }
 
             currentUser.SelectedProfileId = profileId;
+
             this.Data.Users.Update(currentUser);
             this.Data.SaveChanges();
 

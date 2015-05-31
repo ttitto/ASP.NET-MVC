@@ -3,17 +3,19 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net;
     using System.Web;
     using System.Web.Mvc;
 
     using Microsoft.AspNet.Identity;
 
     using Ttitter.Data.Data;
+    using Ttitter.Data.Models;
+    using TtitterMvc.Extensions;
     using TtitterMvc.Infrastructure.Services.Contracts;
     using TtitterMvc.ViewModels.Profiles;
-    using Ttitter.Data.Models;
-    using System.Net;
     using TtitterMvc.Infrastructure.ValidationErrors;
+    using System.Text;
 
     [Authorize]
     public class ProfilesController : BaseController
@@ -59,16 +61,15 @@
             try
             {
                 this.accountServices.SetActiveProfileToUser(profileId);
+                this.AddNotification("New profile selected.", NotificationType.SUCCESS);
                 return new HttpStatusCodeResult(HttpStatusCode.OK);
             }
             catch (ValidationErrors verror)
             {
                 ModelState.AddValidationErrors(verror);
+                this.AddValidationErrorNotification(verror, NotificationType.ERROR);
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-
         }
-
     }
 }

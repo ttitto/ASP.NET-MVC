@@ -17,7 +17,7 @@
     public class ProfilesService : BaseService, IProfileService
     {
         public ProfilesService(ITtitterData ttitterData)
-            :base(ttitterData)
+            : base(ttitterData)
         {
         }
 

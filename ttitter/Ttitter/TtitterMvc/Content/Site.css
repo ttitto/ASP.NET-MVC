@@ -15,3 +15,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.alert {
+    margin: 5px 0;
+    padding: 5px 20px;
+}
