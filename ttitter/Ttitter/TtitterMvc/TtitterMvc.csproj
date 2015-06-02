@@ -221,6 +221,7 @@
     <Compile Include="Infrastructure\Services\Contracts\ITteetService.cs" />
     <Compile Include="Infrastructure\Services\Home\HomeService.cs" />
     <Compile Include="Infrastructure\Services\Profiles\ProfilesService.cs" />
+    <Compile Include="Infrastructure\Services\Tteets\TteetsService.cs" />
     <Compile Include="Infrastructure\ValidationErrors\ControllersExtensions.cs" />
     <Compile Include="Infrastructure\ValidationErrors\DatabaseValidationErrors.cs" />
     <Compile Include="Infrastructure\ValidationErrors\GeneralError.cs" />
@@ -233,10 +234,12 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Profiles\ProfileListItemViewModel.cs" />
     <Compile Include="ViewModels\Profiles\ProfileViewModel.cs" />
+    <Compile Include="ViewModels\Tteets\TteetViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -254,6 +257,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\tteets.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -289,6 +293,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Profiles\GetUserProfilesListItems.cshtml" />
     <Content Include="Views\Shared\_Notifications.cshtml" />
+    <Content Include="Views\Shared\_Tteets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

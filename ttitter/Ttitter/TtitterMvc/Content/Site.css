@@ -20,3 +20,21 @@ textarea {
     margin: 5px 0;
     padding: 5px 20px;
 }
+
+/*Tteet*/
+.tteet-content {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+    .tteet-content .tteet-header {
+        margin-bottom: 10px;
+    }
+
+    .tteet-content time {
+        margin-left: 30px;
+    }
+
+#tteets-loading {
+   
+}

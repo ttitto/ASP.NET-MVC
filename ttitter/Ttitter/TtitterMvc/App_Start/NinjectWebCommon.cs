@@ -19,6 +19,7 @@ namespace TtitterMvc.App_Start
     using TtitterMvc.Infrastructure.Services.Account;
     using TtitterMvc.Infrastructure.Services.Base;
     using TtitterMvc.Infrastructure.Services.Home;
+    using TtitterMvc.Infrastructure.Services.Tteets;
 
     public static class NinjectWebCommon
     {
@@ -75,6 +76,7 @@ namespace TtitterMvc.App_Start
             kernel.Bind<IBaseService>().To<BaseService>().WithConstructorArgument("data", new TtitterData(new TtitterDbContext()));
             kernel.Bind<IHomeService>().To<HomeService>().WithConstructorArgument("data", new TtitterData(new TtitterDbContext()));
             kernel.Bind<IProfileService>().To<ProfilesService>().WithConstructorArgument("data", new TtitterData(new TtitterDbContext()));
+            kernel.Bind<ITteetService>().To<TteetsService>().WithConstructorArgument("data", new TtitterData(new TtitterDbContext()));
             kernel.Bind<IAccountService>().To<AccountService>().WithConstructorArgument("data", new TtitterData(new TtitterDbContext()));
 
             //kernel.Bind<IUserProvider>().To<AspNetUserProvider>();

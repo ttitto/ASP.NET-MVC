@@ -1,0 +1,22 @@
+﻿@using TtitterMvc.ViewModels.Tteets
+
+@model IEnumerable<TteetViewModel>
+
+@foreach (var tteet in @Model)
+{
+    <div class="tteet row well-sm">
+        <div class="col-md-3"><img src="#" alt="Alternate Text" /></div>
+        <div class="tteet-content col-md-9">
+            <div class="tteet-header">
+                <div>
+                    <strong class="profile-name">@tteet.Profile</strong>
+                    <time class="datetime">@tteet.CreatedOn.ToLocalTime() </time>
+                </div>
+            </div>
+            <p>@tteet.Content</p>
+            <div class="tteet-btn-bar">
+                <div class="btn btn-sm">Favourite</div>
+            </div>
+        </div>
+    </div>
+}
