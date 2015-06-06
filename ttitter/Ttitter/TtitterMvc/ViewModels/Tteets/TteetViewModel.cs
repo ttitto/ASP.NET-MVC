@@ -18,6 +18,8 @@
 
         public string Profile { get; set; }
 
+        public int? ProfileImageId { get; set; }
+
         public DateTime CreatedOn { get; set; }
 
         public DateTime? LastEditedOn { get; set; }
@@ -28,6 +30,7 @@
         {
             configuration.CreateMap<Tteet, TteetViewModel>()
                 .ForMember(tvm => tvm.Profile, opt => opt.MapFrom(t => t.Profile.Name))
+                .ForMember(tvm =>tvm.ProfileImageId, opt=> opt.MapFrom(t =>t.Profile.ImageId))
                 .ReverseMap();
         }
     }

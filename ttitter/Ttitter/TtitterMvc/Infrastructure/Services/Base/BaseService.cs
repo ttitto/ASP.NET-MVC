@@ -5,6 +5,7 @@
     using System.Data.Entity.Validation;
     using System.Linq;
     using System.Web;
+
     using Ttitter.Data.Data;
     using TtitterMvc.Infrastructure.Services.Contracts;
     using TtitterMvc.Infrastructure.ValidationErrors;
@@ -12,10 +13,22 @@
     public class BaseService : IBaseService
     {
         private ITtitterData ttitterData;
+        private HashSet<string> allowedImageMimeTypes;
 
         public BaseService(ITtitterData data)
         {
             this.Data = data;
+            this.allowedImageMimeTypes = new HashSet<string>(){
+                "image/bmp",
+                "image/gif",
+                "image/x-icon",
+                "image/jpeg",
+                "image/x-macpaint",
+                "image/pict",
+                "image/png",
+                "image/svg+xml",
+                "image/tiff"
+            };
         }
 
         public ITtitterData Data
@@ -25,6 +38,12 @@
             {
                 this.ttitterData = value;
             }
+        }
+
+        protected virtual HashSet<string> AllowedImageMimeTypes
+        {
+            get { return this.allowedImageMimeTypes; }
+            set { this.allowedImageMimeTypes = value; }
         }
 
         public IEnumerable<DbEntityValidationResult> GetValidationErrors()

@@ -1,7 +1,9 @@
 ﻿namespace TtitterMvc.Infrastructure.Services.Account
 {
-    using System.Web;
     using System.Linq;
+    using System.Net;
+    using System.Web;
+    using System.Web.Mvc;
 
     using Microsoft.AspNet.Identity;
 
@@ -9,8 +11,6 @@
     using Ttitter.Data.Models;
     using TtitterMvc.Infrastructure.Services.Base;
     using TtitterMvc.Infrastructure.Services.Contracts;
-    using System.Web.Mvc;
-    using System.Net;
     using TtitterMvc.Infrastructure.ValidationErrors;
 
     public class AccountService : BaseService, IAccountService

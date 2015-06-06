@@ -1,12 +1,10 @@
 ﻿namespace TtitterMvc.Controllers
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
-    using Ttitter.Data.Data;
+
     using TtitterMvc.Infrastructure.Services.Contracts;
 
     public abstract class BaseController : Controller

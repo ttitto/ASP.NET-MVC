@@ -4,18 +4,20 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Net;
+    using System.Text;
     using System.Web;
     using System.Web.Mvc;
 
     using Microsoft.AspNet.Identity;
 
+    using Ttitter.Common.MimeMappings;
     using Ttitter.Data.Data;
     using Ttitter.Data.Models;
     using TtitterMvc.Extensions;
     using TtitterMvc.Infrastructure.Services.Contracts;
     using TtitterMvc.ViewModels.Profiles;
     using TtitterMvc.Infrastructure.ValidationErrors;
-    using System.Text;
+    using TtitterMvc.ViewModels.Images;
 
     [Authorize]
     public class ProfilesController : BaseController
@@ -71,5 +73,6 @@
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
         }
+
     }
 }

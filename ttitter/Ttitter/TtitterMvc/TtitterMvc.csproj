@@ -197,6 +197,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\NotificationsController.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
@@ -215,11 +216,13 @@
     <Compile Include="Infrastructure\Services\Contracts\IAccountService.cs" />
     <Compile Include="Infrastructure\Services\Contracts\IBaseService.cs" />
     <Compile Include="Infrastructure\Services\Contracts\IHomeService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\IImageService.cs" />
     <Compile Include="Infrastructure\Services\Contracts\IMessageService.cs" />
     <Compile Include="Infrastructure\Services\Contracts\INotificationService.cs" />
     <Compile Include="Infrastructure\Services\Contracts\IProfileService.cs" />
     <Compile Include="Infrastructure\Services\Contracts\ITteetService.cs" />
     <Compile Include="Infrastructure\Services\Home\HomeService.cs" />
+    <Compile Include="Infrastructure\Services\Images\ImagesService.cs" />
     <Compile Include="Infrastructure\Services\Profiles\ProfilesService.cs" />
     <Compile Include="Infrastructure\Services\Tteets\TteetsService.cs" />
     <Compile Include="Infrastructure\ValidationErrors\ControllersExtensions.cs" />
@@ -232,6 +235,7 @@
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Images\ImageViewModel.cs" />
     <Compile Include="ViewModels\Profiles\ProfileListItemViewModel.cs" />
     <Compile Include="ViewModels\Profiles\ProfileViewModel.cs" />
     <Compile Include="ViewModels\Tteets\TteetViewModel.cs" />
@@ -298,6 +302,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Images\" />
     <Folder Include="Views\Messages\" />
     <Folder Include="Views\Notifications\" />
     <Folder Include="Views\Tteets\" />
@@ -314,6 +319,10 @@
     <ProjectReference Include="..\Models\Ttitter.Data.Models.csproj">
       <Project>{ae43eb15-e386-40b2-98e1-09a1260c327b}</Project>
       <Name>Ttitter.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ttitter.Common\Ttitter.Common.csproj">
+      <Project>{57f4d9ee-d02e-4aa2-8ee9-415231c42fcd}</Project>
+      <Name>Ttitter.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ttitter.Data.Data\Ttitter.Data.Data.csproj">
       <Project>{8e152e26-418e-4243-9850-b43503f98a4a}</Project>

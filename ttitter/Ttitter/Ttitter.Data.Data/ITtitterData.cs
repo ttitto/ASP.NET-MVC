@@ -16,6 +16,8 @@
 
         ITtitterRepository<Notification> Notifications { get; }
 
+        ITtitterRepository<Image> Images { get; }
+
         ITtitterRepository<User> Users { get; }
 
         IEnumerable<DbEntityValidationResult> GetValidationErrors();

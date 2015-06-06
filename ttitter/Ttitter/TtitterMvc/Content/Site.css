@@ -35,6 +35,8 @@ textarea {
         margin-left: 30px;
     }
 
-#tteets-loading {
-   
+.img-profile-thumb {
+    max-height: 50px;
+    display: inline;
+    margin: 0 5px;
 }

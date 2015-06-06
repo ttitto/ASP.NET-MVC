@@ -6,12 +6,13 @@
 
     public static class MimeTypeMap
     {
-        private static readonly IDictionary<string, string> _mappings = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase) {
-
         #region Big freaking list of mime types
         // combination of values from Windows 7 Registry and 
         // from C:\Windows\System32\inetsrv\config\applicationHost.config
         // some added, including .7z and .dat
+        private static readonly IDictionary<string, string> mappings = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase) {
+
+       
         {".323", "text/h323"},
         {".3g2", "video/3gpp2"},
         {".3gp", "video/3gpp"},
@@ -605,7 +606,7 @@
 
             string mime;
 
-            return _mappings.TryGetValue(extension, out mime) ? mime : "application/octet-stream";
+            return mappings.TryGetValue(extension, out mime) ? mime : "application/octet-stream";
         }
 
         public static bool IsFileTypeAllowed(string extension, HashSet<string> allowedMimeTypes)
