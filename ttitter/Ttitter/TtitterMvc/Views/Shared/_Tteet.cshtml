@@ -1,0 +1,41 @@
+﻿@using TtitterMvc.ViewModels.Tteets
+@model TteetViewModel
+
+<div class="col-md-3">
+    <img src='@Url.Action("ById", "Images", new { id = @Model.ImageId})' alt="tteets image" />
+</div>
+<div class="tteet-content col-md-9">
+    <div class="tteet-header">
+        <div>
+            @if (@Model.ProfileImageId != null)
+            {
+                string url = Url.Action("ById", "Images", new { id = @Model.ProfileImageId });
+                if (url != null && url != string.Empty)
+                {
+                    <img src="@url" class="img-responsive img-rounded img-profile-thumb" alt="profile image" />
+                }
+            }
+            <strong class="profile-name">@Model.Profile</strong>
+            <time class="datetime">@Model.CreatedOn.ToLocalTime() </time>
+        </div>
+    </div>
+    <p>@Model.Content</p>
+    <div class="tteet-btn-bar">
+        <a href='@Url.Action("Retteet", "Tteets", new { hostId = @Model.Id})'>
+            <img class="icon small transparent" src='@Url.Content("~/Content/Images/retteet.png")' alt="Retteet" title="Retteet" />
+        </a>
+        <a href='@Url.Action("Reply", "Tteets", new { tteetId = @Model.Id})'>
+            <img class="icon small transparent" src='@Url.Content("~/Content/Images/reply.png")' alt="Reply" title="Reply" />
+        </a>
+        <a href='@Url.Action("Report", "Tteets", new { tteetId = @Model.Id })'>
+            <img class="icon small transparent" src='@Url.Content("~/Content/Images/report.jpg")' alt="Report" title="Report" />
+        </a>
+        <a href='@Url.Action("ToggleFavourite", "Tteets", new { tteetId = @Model.Id })'>
+            <img class="icon small transparent" src='@Url.Content("~/Content/Images/favourite.png")' alt="Favourite" title="Select as Favourite" />
+        </a>
+        <a href='@Url.Action("FbShare", "Tteets", new { tteetId = @Model.Id })'>
+            <img class="icon small transparent" src='@Url.Content("~/Content/Images/fb-share.png")' alt="Share" title="Share to Facebook" />
+        </a>
+    </div>
+</div>
+

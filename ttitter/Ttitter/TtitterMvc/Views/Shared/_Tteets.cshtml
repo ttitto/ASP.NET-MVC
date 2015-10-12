@@ -2,31 +2,9 @@
 
 @model IEnumerable<TteetViewModel>
 
-@foreach (var tteet in @Model)
+@foreach (TteetViewModel tteet in @Model)
 {
     <div class="tteet row well-sm">
-        <div class="col-md-3">
-            <img src='@Url.Action("ById", "Images", new { id = @tteet.ImageId})' alt="tteets image" />
-        </div>
-        <div class="tteet-content col-md-9">
-            <div class="tteet-header">
-                <div>
-                    @if (tteet.ProfileImageId != null)
-                    {
-                        string url = Url.Action("ById", "Images", new { id = @tteet.ProfileImageId });
-                        if (url != null && url != string.Empty)
-                        {
-                            <img src="@url" class="img-responsive img-rounded img-profile-thumb" alt="profile image" />
-                        }
-                    }
-                    <strong class="profile-name">@tteet.Profile</strong>
-                    <time class="datetime">@tteet.CreatedOn.ToLocalTime() </time>
-                </div>
-            </div>
-            <p>@tteet.Content</p>
-            <div class="tteet-btn-bar">
-                <div class="btn btn-sm">Favourite</div>
-            </div>
-        </div>
+        @Html.Partial("_Tteet", tteet)
     </div>
 }

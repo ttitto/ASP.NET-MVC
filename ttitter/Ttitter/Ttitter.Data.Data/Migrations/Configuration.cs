@@ -51,7 +51,7 @@ namespace Ttitter.Data.Data.Migrations
                     Content = this.random.RandomString(100, 500),
                     CreatedOn = DateTime.Now - new TimeSpan(this.random.RandomNumber(200, 500), 0, 0),
                     LastEditedOn = DateTime.Now - new TimeSpan(this.random.RandomNumber(1, 200), 0, 0),
-                    Image = this.GetSampleImage("/Migrations/Images/tteet/" + this.random.RandomNumber(1, 5) + ".jpg"),
+                    Image = this.GetSampleImage("/Ttitter.Data.Data/Migrations/Images/tteet/" + this.random.RandomNumber(1, 5) + ".jpg"),
                     Profile = profiles[this.random.RandomNumber(0, profiles.Count() - 1)],
                     FavourizingProfiles = profiles.Where(p => p.Id % (i + 2) == 0).ToList(),
                     FbSharingProfiles = profiles.Where(p => p.Id % (i + 3) == 0).ToList(),
@@ -167,7 +167,7 @@ namespace Ttitter.Data.Data.Migrations
                     Visibility = (VisibilityStatus)Enum.Parse(typeof(VisibilityStatus), this.random.RandomNumber(0, 2).ToString()),
                     User = users[this.random.RandomNumber(0, users.Count() - 1)],
                     Status = (ProfileStatus)Enum.Parse(typeof(ProfileStatus), this.random.RandomNumber(0, 2).ToString()),
-                    Image = this.GetSampleImage("/Migrations/Images/profile/" + this.random.RandomNumber(1, 4) + ".jpg"),
+                    Image = this.GetSampleImage("/Ttitter.Data.Data/Migrations/Images/profile/" + this.random.RandomNumber(1, 4) + ".jpg"),
                     Name = this.random.RandomString(5, 40)
                 };
 
@@ -186,6 +186,9 @@ namespace Ttitter.Data.Data.Migrations
         private Image GetSampleImage(string pathExtension)
         {
             var directory = AssemblyHelper.GetDirectoryForAssembyl(Assembly.GetExecutingAssembly());
+            var trimmedDirectory = directory.Split(new char[] { '\\', '/' }, StringSplitOptions.RemoveEmptyEntries);
+            directory = string.Join("\\", trimmedDirectory, 0, trimmedDirectory.Length - 2);
+
             var file = File.ReadAllBytes(directory + pathExtension);
             var image = new Image
             {

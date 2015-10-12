@@ -40,3 +40,21 @@ textarea {
     display: inline;
     margin: 0 5px;
 }
+
+.tteet-btn-bar {
+    text-align: center;
+}
+
+    .tteet-btn-bar .icon {
+        margin: 0 20px;
+    }
+
+.icon.small.transparent {
+    max-height: 20px;
+    min-height: 20px;
+    display: inline;
+}
+
+.icon.transparent:hover {
+    background-color: darkorange;
+}

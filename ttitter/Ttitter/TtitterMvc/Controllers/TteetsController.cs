@@ -25,6 +25,35 @@
             return View();
         }
 
+        [Authorize]
+        public ActionResult Retteet(int hostId)
+        {
+            return new EmptyResult();
+        }
+
+        [Authorize]
+        public ActionResult Reply(int tteetId)
+        {
+            return new EmptyResult();
+        }
+
+        [Authorize]
+        public ActionResult Report(int tteetId)
+        {
+            return new EmptyResult();
+        }
+
+        [Authorize]
+        public ActionResult ToggleFavourite(int tteetId)
+        {
+            return new EmptyResult();
+        }
+
+        [Authorize]
+        public ActionResult FbShare(int tteetId)
+        {
+            return new EmptyResult();
+        }
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public ActionResult Create(TteetInputModel tteet)
