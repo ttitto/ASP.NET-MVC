@@ -48,6 +48,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -254,6 +258,10 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MvcUoWAutomNin.Common\MvcUoWAutomNin.Common.csproj">
+      <Project>{60c780a1-781e-4e02-a9ed-60f90a6d8cf9}</Project>
+      <Name>MvcUoWAutomNin.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MvcUoWAutomNin.Data\MvcUoWAutomNin.Data.csproj">
       <Project>{595cafe2-331d-4c81-8add-7c16642da885}</Project>
       <Name>MvcUoWAutomNin.Data</Name>

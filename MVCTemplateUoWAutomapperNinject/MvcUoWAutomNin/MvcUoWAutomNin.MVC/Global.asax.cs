@@ -7,6 +7,7 @@
 
     using MvcUoWAutomNin.Data;
     using MvcUoWAutomNin.Data.Migrations;
+    using Common.Mapping;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -18,6 +19,8 @@
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            AutoMapperConfig.Execute();
         }
     }
 }

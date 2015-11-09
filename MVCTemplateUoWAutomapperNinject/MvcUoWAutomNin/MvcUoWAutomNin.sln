@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcUoWAutomNin.Models", "Mv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcUoWAutomNin.Data", "MvcUoWAutomNin.Data\MvcUoWAutomNin.Data.csproj", "{595CAFE2-331D-4C81-8ADD-7C16642DA885}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcUoWAutomNin.Common", "MvcUoWAutomNin.Common\MvcUoWAutomNin.Common.csproj", "{60C780A1-781E-4E02-A9ED-60F90A6D8CF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{595CAFE2-331D-4C81-8ADD-7C16642DA885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{595CAFE2-331D-4C81-8ADD-7C16642DA885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{595CAFE2-331D-4C81-8ADD-7C16642DA885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60C780A1-781E-4E02-A9ED-60F90A6D8CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C780A1-781E-4E02-A9ED-60F90A6D8CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C780A1-781E-4E02-A9ED-60F90A6D8CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C780A1-781E-4E02-A9ED-60F90A6D8CF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
