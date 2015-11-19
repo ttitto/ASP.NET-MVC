@@ -1,4 +1,5 @@
 ﻿using MvcUoWAutomNin.Data;
+using MvcUoWAutomNin.MVC.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,28 @@ namespace MvcUoWAutomNin.MVC.Controllers
     {
         IMvcUoWAutomNinData mvcUoWAutomNinData;
 
-        public BaseController (IMvcUoWAutomNinData mvcUoWAutomNinData)
+        public BaseController(IMvcUoWAutomNinData mvcUoWAutomNinData)
         {
             this.mvcUoWAutomNinData = mvcUoWAutomNinData;
+        }
+
+        public IMvcUoWAutomNinData MvcUoWAutomNinData
+        {
+            get { return this.mvcUoWAutomNinData; }
+            set { this.mvcUoWAutomNinData = value; }
+        }
+
+
+        [NonAction]
+        protected virtual void AddNotification(string message, NotificationType notificationType)
+        {
+            if (!this.TempData.ContainsKey(notificationType.ToString()))
+            {
+                this.TempData.Add(notificationType.ToString(), new HashSet<string>());
+            }
+
+            var notifications = this.TempData[notificationType.ToString()] as ICollection<string>;
+            notifications.Add(message);
         }
     }
 }
