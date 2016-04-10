@@ -6,7 +6,7 @@
     using System.Web;
     using Ttitter.Data.Models;
 
-    public interface IAccountService
+    public interface IAccountService :IBaseService
     {
         User GetCurrentApplicationUser();
 
