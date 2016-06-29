@@ -436,3 +436,5 @@ Debug
 bin
 Antlr.3.5.0.2
 packages
+/OdeToFood/.vs/OdeToFood/v14/*.suo
+/OdeToFood/.vs
