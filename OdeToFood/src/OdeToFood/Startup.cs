@@ -28,7 +28,6 @@ namespace OdeToFood
             services.AddSingleton<IGreeter, Greeter>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app,
             IHostingEnvironment env,
             ILoggerFactory loggerFactory,
@@ -41,6 +40,11 @@ namespace OdeToFood
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseFileServer();
+
+            // both below are replaced with UseFileServer() in the correct order
+            //app.UseDefaultFiles();
+            //app.UseStaticFiles();
             app.Run(async (context) =>
             {
                 var greetingFromAppsettings = greeter.GetGreeting();
