@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -41,7 +43,8 @@ namespace OdeToFood
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
+            app.UseMvc(ConfigureRoutes);
             app.UseFileServer();
 
             // both below are replaced with UseFileServer() in the correct order
@@ -52,6 +55,12 @@ namespace OdeToFood
                 var greetingFromAppsettings = greeter.GetGreeting();
                 await context.Response.WriteAsync(greetingFromAppsettings);
             });
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            // Home/Index
+            routeBuilder.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
         }
     }
 }
