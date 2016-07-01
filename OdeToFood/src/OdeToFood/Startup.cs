@@ -3,9 +3,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using OdeToFood.Entities;
 using OdeToFood.Services;
 
 namespace OdeToFood
@@ -27,6 +30,13 @@ namespace OdeToFood
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            // add default core services
+            services.AddEntityFramework()
+                .AddDbContext<OdeToFoodDbContext>(options => {
+                    options.UseSqlServer(Configuration["database:connection"]);
+            });
+
             services.AddSingleton(provider => this.Configuration);
             services.AddSingleton<IGreeter, Greeter>();
         }
