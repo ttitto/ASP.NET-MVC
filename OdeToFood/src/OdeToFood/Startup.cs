@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -37,6 +38,9 @@ namespace OdeToFood
                     options.UseSqlServer(Configuration["database:connection"]);
             });
 
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<OdeToFoodDbContext>();
+
             services.AddSingleton(provider => this.Configuration);
             services.AddSingleton<IGreeter, Greeter>();
         }
@@ -52,6 +56,8 @@ namespace OdeToFood
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseIdentity();
 
             //app.UseMvcWithDefaultRoute();
             app.UseMvc(ConfigureRoutes);
