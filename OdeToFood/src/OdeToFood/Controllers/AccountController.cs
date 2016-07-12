@@ -49,5 +49,46 @@
 
             return this.View();
         }
+
+        [HttpGet]
+        public IActionResult Login(string returnUrl = null)
+        {
+            var model = new LoginViewModel()
+            {
+                ReturnUrl = returnUrl
+            };
+            return this.View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (this.ModelState.IsValid)
+            {
+                var result = await this.signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, false);
+                if (result.Succeeded)
+                {
+                    if (!string.IsNullOrWhiteSpace(model.ReturnUrl) &&
+                        Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return this.Redirect(model.ReturnUrl);
+                    }
+                    else
+                    {
+                        return this.RedirectToAction("Index", "Home");
+                    }
+                }
+            }
+
+            this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            return this.View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await this.signInManager.SignOutAsync();
+            return this.RedirectToAction("Index", "Home");
+        }
     }
 }
