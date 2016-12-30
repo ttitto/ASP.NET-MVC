@@ -4,9 +4,9 @@
 
     public class PerfHub : Hub
     {
-        public void Hello()
+        public void Send(string message)
         {
-            Clients.All.hello();
+            Clients.All.newMessage(Context.User.Identity.Name + " says:\n\t" + message);
         }
     }
 }
