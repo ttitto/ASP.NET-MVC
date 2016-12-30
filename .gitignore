@@ -436,3 +436,281 @@ Debug
 bin
 Antlr.3.5.0.2
 packages
+*.suo
+/PerformanceSurf/.vs/config
+/OwinAndKatana/KatanaIntro/.vs/KatanaIntro/v14/*.suo
+/DOTNET CORE/Middlewares/.vs/config/applicationhost.config
+/DOTNET CORE/Middlewares/.vs/restore.dg
+/DOTNET CORE/Middlewares/Middlewares.sln
+/DOTNET CORE/Middlewares/global.json
+/DOTNET CORE/Middlewares/src/Middlewares/Middlewares.xproj
+/DOTNET CORE/Middlewares/src/Middlewares/Middlewares.xproj.user
+/DOTNET CORE/Middlewares/src/Middlewares/MyMiddlewareClass.cs
+/DOTNET CORE/Middlewares/src/Middlewares/MyMiddlewareExtensions.cs
+/DOTNET CORE/Middlewares/src/Middlewares/MyMiddlewareOptions.cs
+/DOTNET CORE/Middlewares/src/Middlewares/Program.cs
+/DOTNET CORE/Middlewares/src/Middlewares/Project_Readme.html
+/DOTNET CORE/Middlewares/src/Middlewares/Properties/launchSettings.json
+/DOTNET CORE/Middlewares/src/Middlewares/Startup.cs
+/DOTNET CORE/Middlewares/src/Middlewares/appSettings.json
+/DOTNET CORE/Middlewares/src/Middlewares/project.json
+/DOTNET CORE/Middlewares/src/Middlewares/project.lock.json
+/DOTNET CORE/Middlewares/src/Middlewares/web.config
+/MVC Exam/Stream.7z
+/MVC Exam/Stream/.vs/config/applicationhost.config
+/MVC Exam/Stream/Stream.Common/Mapping/AutoMapperConfig.cs
+/MVC Exam/Stream/Stream.Common/Mapping/IHaveCustomMappings.cs
+/MVC Exam/Stream/Stream.Common/Mapping/IMapFrom.cs
+/MVC Exam/Stream/Stream.Common/Properties/AssemblyInfo.cs
+/MVC Exam/Stream/Stream.Common/Stream.Common.csproj
+/MVC Exam/Stream/Stream.Common/Stream.Common.csproj.user
+/MVC Exam/Stream/Stream.Common/packages.config
+/MVC Exam/Stream/Stream.Data/App.config
+/MVC Exam/Stream/Stream.Data/IStreamData.cs
+/MVC Exam/Stream/Stream.Data/Migrations/Configuration.cs
+/MVC Exam/Stream/Stream.Data/Properties/AssemblyInfo.cs
+/MVC Exam/Stream/Stream.Data/Repositories/IStreamRepository.cs
+/MVC Exam/Stream/Stream.Data/Repositories/StreamEfRepository.cs
+/MVC Exam/Stream/Stream.Data/Stream.Data.csproj
+/MVC Exam/Stream/Stream.Data/StreamData.cs
+/MVC Exam/Stream/Stream.Data/StreamDbContext.cs
+/MVC Exam/Stream/Stream.Data/packages.config
+/MVC Exam/Stream/Stream.MVC/App_Data/Stream.ldf
+/MVC Exam/Stream/Stream.MVC/App_Start/BundleConfig.cs
+/MVC Exam/Stream/Stream.MVC/App_Start/FilterConfig.cs
+/MVC Exam/Stream/Stream.MVC/App_Start/IdentityConfig.cs
+/MVC Exam/Stream/Stream.MVC/App_Start/NinjectWebCommon.cs
+/MVC Exam/Stream/Stream.MVC/App_Start/RouteConfig.cs
+/MVC Exam/Stream/Stream.MVC/App_Start/Startup.Auth.cs
+/MVC Exam/Stream/Stream.MVC/Content/Images/placeholder-image.png
+/MVC Exam/Stream/Stream.MVC/Content/SeedData/seed.json
+/MVC Exam/Stream/Stream.MVC/Content/Site.css
+/MVC Exam/Stream/Stream.MVC/Content/bootstrap-theme.css
+/MVC Exam/Stream/Stream.MVC/Content/bootstrap-theme.css.map
+/MVC Exam/Stream/Stream.MVC/Content/bootstrap-theme.min.css
+/MVC Exam/Stream/Stream.MVC/Content/bootstrap.css
+/MVC Exam/Stream/Stream.MVC/Content/bootstrap.css.map
+/MVC Exam/Stream/Stream.MVC/Content/bootstrap.min.css
+/MVC Exam/Stream/Stream.MVC/Controllers/AccountController.cs
+/MVC Exam/Stream/Stream.MVC/Controllers/BaseController.cs
+/MVC Exam/Stream/Stream.MVC/Controllers/GamesController.cs
+/MVC Exam/Stream/Stream.MVC/Controllers/HomeController.cs
+/MVC Exam/Stream/Stream.MVC/Controllers/ManageController.cs
+/MVC Exam/Stream/Stream.MVC/Controllers/ReviewsController.cs
+/MVC Exam/Stream/Stream.MVC/Global.asax
+/MVC Exam/Stream/Stream.MVC/Global.asax.cs
+/MVC Exam/Stream/Stream.MVC/Models/ConciseGameViewModel.cs
+/MVC Exam/Stream/Stream.MVC/Models/ConciseReviewViewModel.cs
+/MVC Exam/Stream/Stream.MVC/Models/ViewModels/AccountViewModels.cs
+/MVC Exam/Stream/Stream.MVC/Models/ViewModels/ManageViewModels.cs
+/MVC Exam/Stream/Stream.MVC/Notifications/NotificationType.cs
+/MVC Exam/Stream/Stream.MVC/Notifications/NotificationsExtensions.cs
+/MVC Exam/Stream/Stream.MVC/Project_Readme.html
+/MVC Exam/Stream/Stream.MVC/Properties/AssemblyInfo.cs
+/MVC Exam/Stream/Stream.MVC/Scripts/_references.js
+/MVC Exam/Stream/Stream.MVC/Scripts/bootstrap.js
+/MVC Exam/Stream/Stream.MVC/Scripts/bootstrap.min.js
+/MVC Exam/Stream/Stream.MVC/Scripts/jquery-2.1.4.intellisense.js
+/MVC Exam/Stream/Stream.MVC/Scripts/jquery-2.1.4.js
+/MVC Exam/Stream/Stream.MVC/Scripts/jquery-2.1.4.min.js
+/MVC Exam/Stream/Stream.MVC/Scripts/jquery-2.1.4.min.map
+/MVC Exam/Stream/Stream.MVC/Scripts/jquery.validate-vsdoc.js
+/MVC Exam/Stream/Stream.MVC/Scripts/jquery.validate.js
+/MVC Exam/Stream/Stream.MVC/Scripts/jquery.validate.min.js
+/MVC Exam/Stream/Stream.MVC/Scripts/jquery.validate.unobtrusive.js
+/MVC Exam/Stream/Stream.MVC/Scripts/jquery.validate.unobtrusive.min.js
+/MVC Exam/Stream/Stream.MVC/Scripts/modernizr-2.8.3.js
+/MVC Exam/Stream/Stream.MVC/Scripts/respond.js
+/MVC Exam/Stream/Stream.MVC/Scripts/respond.matchmedia.addListener.js
+/MVC Exam/Stream/Stream.MVC/Scripts/respond.matchmedia.addListener.min.js
+/MVC Exam/Stream/Stream.MVC/Scripts/respond.min.js
+/MVC Exam/Stream/Stream.MVC/Startup.cs
+/MVC Exam/Stream/Stream.MVC/Stream.MVC.csproj
+/MVC Exam/Stream/Stream.MVC/Stream.MVC.csproj.user
+/MVC Exam/Stream/Stream.MVC/Views/Account/ConfirmEmail.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/ExternalLoginConfirmation.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/ExternalLoginFailure.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/ForgotPassword.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/ForgotPasswordConfirmation.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/Login.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/Register.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/ResetPassword.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/ResetPasswordConfirmation.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/SendCode.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/VerifyCode.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Account/_ExternalLoginsListPartial.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Games/All.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Home/About.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Home/Contact.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Home/Index.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Manage/AddPhoneNumber.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Manage/ChangePassword.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Manage/Index.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Manage/ManageLogins.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Manage/SetPassword.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Manage/VerifyPhoneNumber.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Shared/DisplayTemplates/_ConciseGame.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Shared/DisplayTemplates/_ConciseReview.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Shared/Error.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Shared/Lockout.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Shared/_HighestRatedGames.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Shared/_LatestReviews.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Shared/_Layout.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Shared/_LoginPartial.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Shared/_Notifications.cshtml
+/MVC Exam/Stream/Stream.MVC/Views/Web.config
+/MVC Exam/Stream/Stream.MVC/Views/_ViewStart.cshtml
+/MVC Exam/Stream/Stream.MVC/Web.Debug.config
+/MVC Exam/Stream/Stream.MVC/Web.Release.config
+/MVC Exam/Stream/Stream.MVC/Web.config
+/MVC Exam/Stream/Stream.MVC/favicon.ico
+/MVC Exam/Stream/Stream.MVC/fonts/glyphicons-halflings-regular.eot
+/MVC Exam/Stream/Stream.MVC/fonts/glyphicons-halflings-regular.svg
+/MVC Exam/Stream/Stream.MVC/fonts/glyphicons-halflings-regular.ttf
+/MVC Exam/Stream/Stream.MVC/fonts/glyphicons-halflings-regular.woff
+/MVC Exam/Stream/Stream.MVC/fonts/glyphicons-halflings-regular.woff2
+/MVC Exam/Stream/Stream.MVC/packages.config
+/MVC Exam/Stream/Stream.Models/App.config
+/MVC Exam/Stream/Stream.Models/Game.cs
+/MVC Exam/Stream/Stream.Models/Genre.cs
+/MVC Exam/Stream/Stream.Models/Image.cs
+/MVC Exam/Stream/Stream.Models/Properties/AssemblyInfo.cs
+/MVC Exam/Stream/Stream.Models/Rating.cs
+/MVC Exam/Stream/Stream.Models/Review.cs
+/MVC Exam/Stream/Stream.Models/Stream.Models.csproj
+/MVC Exam/Stream/Stream.Models/User.cs
+/MVC Exam/Stream/Stream.Models/packages.config
+/MVC Exam/Stream/Stream.sln
+/Snippy/ASP.NET-MVC-Exam-October-2015.docx
+/Snippy/Snippy/.vs/config/applicationhost.config
+/Snippy/Snippy/Snippy.Common/Mapping/AutoMapperConfig.cs
+/Snippy/Snippy/Snippy.Common/Mapping/IHaveCustomMappings.cs
+/Snippy/Snippy/Snippy.Common/Mapping/IMapFrom.cs
+/Snippy/Snippy/Snippy.Common/Properties/AssemblyInfo.cs
+/Snippy/Snippy/Snippy.Common/Snippy.Common.csproj
+/Snippy/Snippy/Snippy.Common/Snippy.Common.csproj.user
+/Snippy/Snippy/Snippy.Common/packages.config
+/Snippy/Snippy/Snippy.Data/App.config
+/Snippy/Snippy/Snippy.Data/ISnippyData.cs
+/Snippy/Snippy/Snippy.Data/Migrations/Configuration.cs
+/Snippy/Snippy/Snippy.Data/Properties/AssemblyInfo.cs
+/Snippy/Snippy/Snippy.Data/Repositories/ISnippyRepository.cs
+/Snippy/Snippy/Snippy.Data/Repositories/SnippyEfRepository.cs
+/Snippy/Snippy/Snippy.Data/Snippy.Data.csproj
+/Snippy/Snippy/Snippy.Data/Snippy.Data.csproj.user
+/Snippy/Snippy/Snippy.Data/SnippyData.cs
+/Snippy/Snippy/Snippy.Data/SnippyDbContext.cs
+/Snippy/Snippy/Snippy.Data/packages.config
+/Snippy/Snippy/Snippy.MVC/App_Data/MvcUoWAutomNin.mdf
+/Snippy/Snippy/Snippy.MVC/App_Data/MvcUoWAutomNin_log.ldf
+/Snippy/Snippy/Snippy.MVC/App_Start/BundleConfig.cs
+/Snippy/Snippy/Snippy.MVC/App_Start/FilterConfig.cs
+/Snippy/Snippy/Snippy.MVC/App_Start/IdentityConfig.cs
+/Snippy/Snippy/Snippy.MVC/App_Start/NinjectWebCommon.cs
+/Snippy/Snippy/Snippy.MVC/App_Start/RouteConfig.cs
+/Snippy/Snippy/Snippy.MVC/App_Start/Startup.Auth.cs
+/Snippy/Snippy/Snippy.MVC/Content/SeedData/comments.txt
+/Snippy/Snippy/Snippy.MVC/Content/SeedData/labels.txt
+/Snippy/Snippy/Snippy.MVC/Content/SeedData/languages.txt
+/Snippy/Snippy/Snippy.MVC/Content/SeedData/snippets.txt
+/Snippy/Snippy/Snippy.MVC/Content/SeedData/users.txt
+/Snippy/Snippy/Snippy.MVC/Content/Site.css
+/Snippy/Snippy/Snippy.MVC/Content/bootstrap-theme.css
+/Snippy/Snippy/Snippy.MVC/Content/bootstrap-theme.css.map
+/Snippy/Snippy/Snippy.MVC/Content/bootstrap-theme.min.css
+/Snippy/Snippy/Snippy.MVC/Content/bootstrap.css
+/Snippy/Snippy/Snippy.MVC/Content/bootstrap.css.map
+/Snippy/Snippy/Snippy.MVC/Content/bootstrap.min.css
+/Snippy/Snippy/Snippy.MVC/Controllers/AccountController.cs
+/Snippy/Snippy/Snippy.MVC/Controllers/BaseController.cs
+/Snippy/Snippy/Snippy.MVC/Controllers/CommentsController.cs
+/Snippy/Snippy/Snippy.MVC/Controllers/HomeController.cs
+/Snippy/Snippy/Snippy.MVC/Controllers/LabelsController.cs
+/Snippy/Snippy/Snippy.MVC/Controllers/ManageController.cs
+/Snippy/Snippy/Snippy.MVC/Controllers/SnippetsController.cs
+/Snippy/Snippy/Snippy.MVC/Global.asax
+/Snippy/Snippy/Snippy.MVC/Global.asax.cs
+/Snippy/Snippy/Snippy.MVC/Models/BestLabelViewModel.cs
+/Snippy/Snippy/Snippy.MVC/Models/ViewModels/AccountViewModels.cs
+/Snippy/Snippy/Snippy.MVC/Models/ViewModels/CommentWithSnippetViewModel.cs
+/Snippy/Snippy/Snippy.MVC/Models/ViewModels/LabelViewModel.cs
+/Snippy/Snippy/Snippy.MVC/Models/ViewModels/ManageViewModels.cs
+/Snippy/Snippy/Snippy.MVC/Models/ViewModels/SnippetViewModel.cs
+/Snippy/Snippy/Snippy.MVC/Notifications/NotificationType.cs
+/Snippy/Snippy/Snippy.MVC/Notifications/NotificationsExtensions.cs
+/Snippy/Snippy/Snippy.MVC/Project_Readme.html
+/Snippy/Snippy/Snippy.MVC/Properties/AssemblyInfo.cs
+/Snippy/Snippy/Snippy.MVC/Scripts/_references.js
+/Snippy/Snippy/Snippy.MVC/Scripts/bootstrap.js
+/Snippy/Snippy/Snippy.MVC/Scripts/bootstrap.min.js
+/Snippy/Snippy/Snippy.MVC/Scripts/jquery-2.1.4.intellisense.js
+/Snippy/Snippy/Snippy.MVC/Scripts/jquery-2.1.4.js
+/Snippy/Snippy/Snippy.MVC/Scripts/jquery-2.1.4.min.js
+/Snippy/Snippy/Snippy.MVC/Scripts/jquery-2.1.4.min.map
+/Snippy/Snippy/Snippy.MVC/Scripts/jquery.validate-vsdoc.js
+/Snippy/Snippy/Snippy.MVC/Scripts/jquery.validate.js
+/Snippy/Snippy/Snippy.MVC/Scripts/jquery.validate.min.js
+/Snippy/Snippy/Snippy.MVC/Scripts/jquery.validate.unobtrusive.js
+/Snippy/Snippy/Snippy.MVC/Scripts/jquery.validate.unobtrusive.min.js
+/Snippy/Snippy/Snippy.MVC/Scripts/modernizr-2.8.3.js
+/Snippy/Snippy/Snippy.MVC/Scripts/respond.js
+/Snippy/Snippy/Snippy.MVC/Scripts/respond.matchmedia.addListener.js
+/Snippy/Snippy/Snippy.MVC/Scripts/respond.matchmedia.addListener.min.js
+/Snippy/Snippy/Snippy.MVC/Scripts/respond.min.js
+/Snippy/Snippy/Snippy.MVC/Snippy.MVC.csproj
+/Snippy/Snippy/Snippy.MVC/Snippy.MVC.csproj.user
+/Snippy/Snippy/Snippy.MVC/Startup.cs
+/Snippy/Snippy/Snippy.MVC/Views/Account/ConfirmEmail.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/ExternalLoginConfirmation.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/ExternalLoginFailure.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/ForgotPassword.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/ForgotPasswordConfirmation.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/Login.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/Register.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/ResetPassword.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/ResetPasswordConfirmation.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/SendCode.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/VerifyCode.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Account/_ExternalLoginsListPartial.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Home/About.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Home/Contact.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Home/Index.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Labels/_BestLabels.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Manage/AddPhoneNumber.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Manage/ChangePassword.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Manage/Index.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Manage/ManageLogins.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Manage/SetPassword.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Manage/VerifyPhoneNumber.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Shared/DisplayTemplates/_CommentWithSnippetMention.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Shared/DisplayTemplates/_Snippet.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Shared/Error.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Shared/Lockout.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Shared/_LatestComments.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Shared/_LatestSnippets.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Shared/_Layout.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Shared/_LoginPartial.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Shared/_Notifications.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Snippets/Details.cshtml
+/Snippy/Snippy/Snippy.MVC/Views/Web.config
+/Snippy/Snippy/Snippy.MVC/Views/_ViewStart.cshtml
+/Snippy/Snippy/Snippy.MVC/Web.Debug.config
+/Snippy/Snippy/Snippy.MVC/Web.Release.config
+/Snippy/Snippy/Snippy.MVC/Web.config
+/Snippy/Snippy/Snippy.MVC/favicon.ico
+/Snippy/Snippy/Snippy.MVC/fonts/glyphicons-halflings-regular.eot
+/Snippy/Snippy/Snippy.MVC/fonts/glyphicons-halflings-regular.svg
+/Snippy/Snippy/Snippy.MVC/fonts/glyphicons-halflings-regular.ttf
+/Snippy/Snippy/Snippy.MVC/fonts/glyphicons-halflings-regular.woff
+/Snippy/Snippy/Snippy.MVC/fonts/glyphicons-halflings-regular.woff2
+/Snippy/Snippy/Snippy.MVC/packages.config
+/Snippy/Snippy/Snippy.Models/App.config
+/Snippy/Snippy/Snippy.Models/Comment.cs
+/Snippy/Snippy/Snippy.Models/Label.cs
+/Snippy/Snippy/Snippy.Models/ProgrammingLanguage.cs
+/Snippy/Snippy/Snippy.Models/Properties/AssemblyInfo.cs
+/Snippy/Snippy/Snippy.Models/Snippet.cs
+/Snippy/Snippy/Snippy.Models/Snippy.Models.csproj
+/Snippy/Snippy/Snippy.Models/User.cs
+/Snippy/Snippy/Snippy.Models/packages.config
+/Snippy/Snippy/Snippy.sln
