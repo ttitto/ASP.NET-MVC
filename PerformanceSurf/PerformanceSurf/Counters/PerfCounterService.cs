@@ -11,7 +11,7 @@
         {
             this.counters = new List<PerfCounterWrapper>();
             this.counters.Add(new PerfCounterWrapper("Processor", "Processor", "% Processor Time", "_Total"));
-            this.counters.Add(new PerfCounterWrapper("Paging", "Memory", "Memory", "Pages/sec"));
+            this.counters.Add(new PerfCounterWrapper("Paging", "Memory", "Pages/sec"));
             this.counters.Add(new PerfCounterWrapper("Disk", "PhysicalDisk", "% Disk Time", "_Total"));
         }
 

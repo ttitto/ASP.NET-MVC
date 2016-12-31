@@ -15,9 +15,17 @@
     </div>
 </div>
 
+<div class="row" data-bind="foreach:counters">
+    <div class="col-md-12">
+        <h2 data-bind="text:name"></h2>
+        <canvas width="800" height="100" data-bind="attr:{'id': name}"></canvas>
+    </div>
+</div>
+
 @section scripts{
     <script src="~/Scripts/jquery.signalR-2.2.1.js"></script>
     <script src="~/SignalR/Hubs"></script>
     <script src="~/Scripts/knockout-3.4.0.js"></script>
+    <script src="~/Scripts/smoothie.js"></script>
     <script src="~/Scripts/perfSurf.js"></script>
 }

@@ -6,9 +6,9 @@
     {
         private PerformanceCounter counter;
 
-        public PerfCounterWrapper(string name, string category, string counter, string instance)
+        public PerfCounterWrapper(string name, string category, string counter, string instance = "")
         {
-            this.counter = new PerformanceCounter(category, name, instance, true);
+            this.counter = new PerformanceCounter(category, counter, instance, readOnly: true);
             this.Name = name;
         }
 
