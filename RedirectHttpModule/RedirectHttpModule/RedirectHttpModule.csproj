@@ -148,6 +148,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Configuration\RedirectModule.cs" />
+    <Compile Include="Configuration\RedirectSection.cs" />
+    <Compile Include="Configuration\Redirect.cs" />
+    <Compile Include="Configuration\RedirectCollection.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
