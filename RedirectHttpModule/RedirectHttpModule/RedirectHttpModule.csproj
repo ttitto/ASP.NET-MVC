@@ -153,6 +153,7 @@
     <Compile Include="Configuration\Redirect.cs" />
     <Compile Include="Configuration\RedirectCollection.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\JsonNetResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
