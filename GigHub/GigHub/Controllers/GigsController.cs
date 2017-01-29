@@ -1,6 +1,5 @@
 ﻿namespace GigHub.Controllers
 {
-    using System;
     using System.Linq;
     using System.Web.Mvc;
     using Microsoft.AspNet.Identity;
@@ -32,17 +31,23 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(GigFormViewModel viewModel)
         {
-            var gig = new Gig()
+            if (this.ModelState.IsValid)
             {
-                ArtistId = User.Identity.GetUserId(),
-                DateTime = viewModel.DateTime,
-                GenreId = viewModel.Genre,
-                Venue = viewModel.Venue
-            };
-            this.context.Gigs.Add(gig);
-            this.context.SaveChanges();
+                var gig = new Gig()
+                {
+                    ArtistId = User.Identity.GetUserId(),
+                    DateTime = viewModel.GetDateTime(),
+                    GenreId = viewModel.Genre,
+                    Venue = viewModel.Venue
+                };
+                this.context.Gigs.Add(gig);
+                this.context.SaveChanges();
 
-            return this.RedirectToAction("Index", "Home");
+                return this.RedirectToAction("Index", "Home");
+            }
+
+            viewModel.Genres = this.context.Genres.ToList();
+            return this.View(viewModel);
         }
     }
 }
