@@ -10,8 +10,8 @@
         {
         }
 
-        DbSet<Gig> Gigs { get; set; }
-        DbSet<Genre> Genres { get; set; }
+        public DbSet<Gig> Gigs { get; set; }
+        public DbSet<Genre> Genres { get; set; }
 
         public static ApplicationDbContext Create()
         {
