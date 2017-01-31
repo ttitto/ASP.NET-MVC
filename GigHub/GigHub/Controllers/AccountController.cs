@@ -1,14 +1,11 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using GigHub.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using GigHub.Models;
 
 namespace GigHub.Controllers
 {
@@ -151,7 +148,7 @@ namespace GigHub.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new Artist { UserName = model.Email, Email = model.Email };
+                var user = new Artist { Name = model.Name, UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
