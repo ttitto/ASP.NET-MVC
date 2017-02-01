@@ -138,11 +138,22 @@ h6,
             left: 70px;
         }
 
-        .gigs > li .details .artist{
-            font-weight:bold;
-            display:block;
-        }
+            .gigs > li .details .artist {
+                font-weight: bold;
+            }
 
-        .gigs > li .details .genre{
-            font-size:15px;
-        }
+                .gigs > li .details .artist.container {
+                    padding: 0;
+                    text-align: left;
+                    margin-bottom: 5px;
+                }
+
+            .gigs > li .details .js-toggle-following {
+                margin-left: 14px;
+                font-size: 12px;
+                font-weight: 100;
+            }
+
+            .gigs > li .details .genre {
+                font-size: 15px;
+            }

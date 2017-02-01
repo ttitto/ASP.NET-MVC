@@ -1,4 +1,5 @@
-﻿@model IEnumerable<GigHub.Models.Gig>
+﻿
+@model IEnumerable<GigHub.Models.Gig>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -12,7 +13,10 @@
                 <div class="day">@gig.DateTime.ToString("d ")</div>
             </div>
             <div class="details">
-                <span class="artist">@gig.Artist.Name</span>
+                <div class="artist container">
+                    <span class="artist">@gig.Artist.Name</span>
+                    <a href="~/api/Follows" class="js-toggle-following" data-followed-id="@gig.ArtistId">Follow?</a>
+                </div>
                 <span class="genre">@gig.Genre.Name</span>
                 <button class="btn btn-default btn-sm pull-right js-toggle-attendance" data-gig-id="@gig.Id">Going?</button>
             </div>
@@ -25,14 +29,26 @@
         $(document).ready(function onReady() {
             $('.js-toggle-attendance').click(function onAttendanceToggleClick(e) {
                 var button = $(e.target)
-                $.post('/api/attendances',{gigId: button.attr('data-gig-id')})
+                $.post('/api/attendances', { gigId: button.attr('data-gig-id') })
                 .done(function onSuccess() {
-                    button.removeClass('btn-default').addClass('btn-info').text("Going");
+                    button.removeClass('btn-default').addClass('btn-info').text("Going")
                 })
                 .fail(function onError(errorData) {
                     alert('Something failed.')
                 })
             })
+
+            $('.js-toggle-following').click(function onFollowingToggle(e) {
+                e.preventDefault();
+                var link = $(e.target);
+                $.post('/api/follows', { followedId: link.attr('data-followed-id') })
+                .done(function onSuccess(successData) {
+                    link.text('Following')
+                })
+                .fail(function onError(errorData) {
+                    alert('Something failed.')
+                })
+            });
         });
     </script>
-    }
+}

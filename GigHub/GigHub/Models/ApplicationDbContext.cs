@@ -13,6 +13,7 @@
         public DbSet<Gig> Gigs { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
+        public DbSet<Follow> Follows { get; set; }
 
         public static ApplicationDbContext Create()
         {
@@ -22,6 +23,7 @@
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Attendance>().HasRequired(att => att.Gig).WithMany().WillCascadeOnDelete(false);
+            modelBuilder.Entity<Follow>().HasRequired(f => f.Follower).WithMany().WillCascadeOnDelete(false);
             base.OnModelCreating(modelBuilder);
         }
     }

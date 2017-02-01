@@ -209,7 +209,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AttendancesController.cs" />
+    <Compile Include="Dtos\FollowDto.cs" />
+    <Compile Include="Migrations\201702011710466_AddFollows.cs" />
+    <Compile Include="Migrations\201702011710466_AddFollows.Designer.cs">
+      <DependentUpon>201702011710466_AddFollows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Follow.cs" />
+    <Compile Include="WebApiControllers\AttendancesController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -273,6 +279,7 @@
     <Compile Include="ViewModels\GigFormViewModel.cs" />
     <Compile Include="ViewModels\ValidTimeAttribute.cs" />
     <Compile Include="ViewModels\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="WebApiControllers\FollowsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -366,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701311837215_AddAttendance.resx">
       <DependentUpon>201701311837215_AddAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011710466_AddFollows.resx">
+      <DependentUpon>201702011710466_AddFollows.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
