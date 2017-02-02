@@ -209,6 +209,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="Dtos\FollowDto.cs" />
     <Compile Include="Migrations\201702011710466_AddFollows.cs" />
     <Compile Include="Migrations\201702011710466_AddFollows.Designer.cs">
