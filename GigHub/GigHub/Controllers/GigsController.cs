@@ -1,5 +1,6 @@
 ﻿namespace GigHub.Controllers
 {
+    using System;
     using System.Data.Entity;
     using System.Linq;
     using System.Web.Mvc;
@@ -14,6 +15,18 @@
         public GigsController()
         {
             this.context = new ApplicationDbContext();
+        }
+
+        [Authorize]
+        public ActionResult Mine()
+        {
+            var userId = User.Identity.GetUserId();
+            var gigs = this.context.Gigs
+                .Where(g => g.ArtistId == userId && g.DateTime > DateTime.Now)
+                .Include(g => g.Genre)
+                .ToList();
+
+            return this.View(gigs);
         }
 
         [Authorize]
@@ -69,7 +82,7 @@
             }
 
             viewModel.Genres = this.context.Genres.ToList();
-            return this.View(viewModel);
+            return this.RedirectToAction("Mine", "Gigs");
         }
     }
 }
