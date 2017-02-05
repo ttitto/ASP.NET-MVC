@@ -55,10 +55,11 @@
         {
             var viewModel = new GigFormViewModel()
             {
-                Genres = this.context.Genres.ToList()
+                Genres = this.context.Genres.ToList(),
+                Heading = "Add a Gig"
             };
 
-            return View(viewModel);
+            return View("GigForm", viewModel);
         }
 
         [Authorize]
@@ -78,11 +79,52 @@
                 this.context.Gigs.Add(gig);
                 this.context.SaveChanges();
 
-                return this.RedirectToAction("Index", "Home");
+                return this.RedirectToAction("Mine", "Gigs");
             }
 
             viewModel.Genres = this.context.Genres.ToList();
-            return this.RedirectToAction("Mine", "Gigs");
+            return this.RedirectToAction("GigForm", "Gigs");
+        }
+
+        [Authorize]
+        public ActionResult Edit(int gigId)
+        {
+            var userId = User.Identity.GetUserId();
+            var gig = this.context.Gigs.Single(g => g.Id == gigId && g.ArtistId == userId);
+            var viewModel = new GigFormViewModel()
+            {
+                Genres = this.context.Genres.ToList(),
+                Id = gig.Id,
+                Date = gig.DateTime.ToString("d MMM yyyy"),
+                Time = gig.DateTime.ToString("HH:mm"),
+                Genre = gig.GenreId,
+                Venue = gig.Venue,
+                Heading = "Edit a Gig"
+            };
+
+            return View("GigForm", viewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(GigFormViewModel viewModel)
+        {
+            if (this.ModelState.IsValid)
+            {
+                var userId = User.Identity.GetUserId();
+                var gig = this.context.Gigs.Single(g => g.Id == viewModel.Id && g.ArtistId == userId);
+                gig.Venue = viewModel.Venue;
+                gig.DateTime = viewModel.GetDateTime();
+                gig.GenreId = viewModel.Genre;
+
+                this.context.SaveChanges();
+
+                return this.RedirectToAction("Mine", "Gigs");
+            }
+
+            viewModel.Genres = this.context.Genres.ToList();
+            return this.View("GigForm", "Gigs");
         }
     }
 }
