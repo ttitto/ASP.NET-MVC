@@ -20,8 +20,33 @@
                 <span class="genre">@gig.Genre.Name</span>
                 <div class="actions">
                     <a href="@Url.Action("Edit", "Gigs", new { gigId = gig.Id})">Edit</a>
+                    <a href="#" class="js-cancel-gig" data-gig-id="@gig.Id">Cancel</a>
                 </div>
             </div>
         </li>
     }
 </ul>
+
+@section scripts{
+    <script>
+        $(document).ready(function onMineReady() {
+            $('.js-cancel-gig').click(function onGigCancelClick(ev) {
+                var link = $(ev.target);
+                if (confirm('Are you sure you want to delete this gig?')) {
+                    $.ajax({
+                        url: '/api/gigs/' + link.attr('data-gig-id'),
+                        method: 'DELETE'
+                    })
+                    .done(function OnGigCancelSuccess() {
+                        link.parents('li').fadeOut(function onGigParentFadeOut() {
+                            $(this).remove();
+                        });
+                    })
+                    .fail(function onGigCancelError() {
+                        alert('Somethig failed on gig canceling!');
+                    });
+                }
+            });
+        });
+    </script>
+}

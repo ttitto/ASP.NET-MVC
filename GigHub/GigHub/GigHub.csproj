@@ -209,7 +209,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\GigsController.cs" />
     <Compile Include="Controllers\FolloweesController.cs" />
+    <Compile Include="Migrations\201702101814244_AddIsCanceledToGig.cs" />
+    <Compile Include="Migrations\201702101814244_AddIsCanceledToGig.Designer.cs">
+      <DependentUpon>201702101814244_AddIsCanceledToGig.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\GigsViewModel.cs" />
     <Compile Include="Dtos\FollowDto.cs" />
     <Compile Include="Migrations\201702011710466_AddFollows.cs" />
@@ -380,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702011710466_AddFollows.resx">
       <DependentUpon>201702011710466_AddFollows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702101814244_AddIsCanceledToGig.resx">
+      <DependentUpon>201702101814244_AddIsCanceledToGig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
