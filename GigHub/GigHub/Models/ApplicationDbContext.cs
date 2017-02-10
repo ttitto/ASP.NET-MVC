@@ -14,6 +14,8 @@
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Follow> Follows { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<UserNotification> UserNotifications { get; set; }
 
         public static ApplicationDbContext Create()
         {
@@ -24,6 +26,11 @@
         {
             modelBuilder.Entity<Attendance>().HasRequired(att => att.Gig).WithMany().WillCascadeOnDelete(false);
             modelBuilder.Entity<Follow>().HasRequired(f => f.Follower).WithMany().WillCascadeOnDelete(false);
+            modelBuilder.Entity<UserNotification>()
+                .HasRequired(un => un.User)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
             base.OnModelCreating(modelBuilder);
         }
     }
