@@ -1,4 +1,4 @@
-﻿namespace GigHub.WebApiControllers
+﻿namespace GigHub.Controllers.Api
 {
     using System.Linq;
     using System.Web.Http;

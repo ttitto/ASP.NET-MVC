@@ -20,9 +20,14 @@
         {
             var userId = User.Identity.GetUserId();
             var gig = this.context.Gigs.Single(g => g.Id == id && g.ArtistId == userId);
-            gig.IsCanceled = true;
+            if (gig.IsCanceled)
+            {
+                return this.NotFound();
+            }
 
+            gig.IsCanceled = true;
             this.context.SaveChanges();
+
             return this.Ok();
         }
     }

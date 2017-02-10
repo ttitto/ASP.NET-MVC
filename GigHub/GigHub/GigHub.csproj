@@ -222,7 +222,7 @@
       <DependentUpon>201702011710466_AddFollows.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Follow.cs" />
-    <Compile Include="WebApiControllers\AttendancesController.cs" />
+    <Compile Include="Controllers\Api\AttendancesController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -286,7 +286,7 @@
     <Compile Include="ViewModels\GigFormViewModel.cs" />
     <Compile Include="ViewModels\ValidTimeAttribute.cs" />
     <Compile Include="ViewModels\VerifyPhoneNumberViewModel.cs" />
-    <Compile Include="WebApiControllers\FollowsController.cs" />
+    <Compile Include="Controllers\Api\FollowsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
