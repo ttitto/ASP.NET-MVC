@@ -24,11 +24,11 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Attendance>().HasRequired(att => att.Gig).WithMany().WillCascadeOnDelete(false);
+            modelBuilder.Entity<Attendance>().HasRequired(att => att.Gig).WithMany(g => g.Attendances).WillCascadeOnDelete(false);
             modelBuilder.Entity<Follow>().HasRequired(f => f.Follower).WithMany().WillCascadeOnDelete(false);
             modelBuilder.Entity<UserNotification>()
                 .HasRequired(un => un.User)
-                .WithMany()
+                .WithMany(us => us.UserNotifications)
                 .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);

@@ -113,11 +113,14 @@
             if (this.ModelState.IsValid)
             {
                 var userId = User.Identity.GetUserId();
-                var gig = this.context.Gigs.Single(g => g.Id == viewModel.Id && g.ArtistId == userId);
+                var gig = this.context.Gigs
+                    .Include(g => g.Attendances.Select(att => att.Attendee))
+                    .Single(g => g.Id == viewModel.Id && g.ArtistId == userId);
                 gig.Venue = viewModel.Venue;
                 gig.DateTime = viewModel.GetDateTime();
                 gig.GenreId = viewModel.Genre;
 
+                gig.Update();
                 this.context.SaveChanges();
 
                 return this.RedirectToAction("Mine", "Gigs");
