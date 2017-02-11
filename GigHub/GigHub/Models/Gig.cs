@@ -31,7 +31,7 @@
         public void Cancel()
         {
             this.IsCanceled = true;
-            var notification = new Notification(NotificationType.GigCanceled, this);
+            var notification = Notification.GigCanceled(this);
 
             foreach (var attendee in this.Attendances.Select(a => a.Attendee))
             {
@@ -42,9 +42,7 @@
         public void Update()
         {
             this.IsUpdated = true;
-            var notification = new Notification(NotificationType.GigUpdated, this);
-            notification.OriginalDateTime = this.DateTime;
-            notification.OriginalVenue = this.Venue;
+            var notification = Notification.GigUpdated(this, this.DateTime, this.Venue);
             foreach (var attendee in this.Attendances.Select(a => a.Attendee))
             {
                 attendee.Notify(notification);
