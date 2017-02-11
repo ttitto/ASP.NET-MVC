@@ -43,6 +43,8 @@
         {
             this.IsUpdated = true;
             var notification = new Notification(NotificationType.GigUpdated, this);
+            notification.OriginalDateTime = this.DateTime;
+            notification.OriginalVenue = this.Venue;
             foreach (var attendee in this.Attendances.Select(a => a.Attendee))
             {
                 attendee.Notify(notification);
