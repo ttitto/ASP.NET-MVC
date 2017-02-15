@@ -66,6 +66,17 @@ textarea {
         color: #fff;
     }
 
+    .navbar-inverse .notifications {
+        position: relative;
+    }
+
+        .navbar-inverse .notifications .badge {
+            position: absolute;
+            top: 8px;
+            right: 1px;
+            background: #a80a0a;
+        }
+
     .navbar-inverse .navbar-nav > .dropdown > a .caret {
         border-top-color: #fff;
         border-bottom-color: #fff;
