@@ -42,7 +42,18 @@
     <script>
         $(document).ready(function onLayoutReady() {
             $.getJSON('/api/notifications', function onGetNotifications(notifications) {
-                $('.js-notifications-count').text(notifications.length).removeClass('hide')
+                $('.js-notifications-count').text(notifications.length)
+                    .removeClass('hide')
+                    .addClass('animated pulse')
+            })
+
+            $('.notifications').popover({
+                html: true,
+                content: function popoverContentFunction() {
+                    return 'Hello world'
+                },
+                placement: 'bottom',
+                title: 'Notifications'
             })
         })
     </script>

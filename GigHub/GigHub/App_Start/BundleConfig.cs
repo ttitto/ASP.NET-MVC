@@ -25,6 +25,7 @@ namespace GigHub
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/animate.css",
                       "~/Content/site.css"));
         }
     }
