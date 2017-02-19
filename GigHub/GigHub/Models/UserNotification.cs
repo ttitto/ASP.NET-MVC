@@ -34,6 +34,11 @@
         public int NotificationId { get; set; }
         public Notification Notification { get; private set; }
 
-        public bool IsRead { get; set; }
+        public bool IsRead { get; private set; }
+
+        public void Read()
+        {
+            this.IsRead = true;
+        }
     }
 }

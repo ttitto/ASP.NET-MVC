@@ -31,5 +31,18 @@
 
             return notifications.To<NotificationDto>();
         }
+
+        [HttpPost]
+        public IHttpActionResult MarkAsRead()
+        {
+            var userId = User.Identity.GetUserId();
+            var notifications = this.context.UserNotifications
+                .Where(un => un.UserId == userId && !un.IsRead)
+                .ToList();
+
+            notifications.ForEach(un => un.Read());
+            this.context.SaveChanges();
+            return this.Ok();
+        }
     }
 }
