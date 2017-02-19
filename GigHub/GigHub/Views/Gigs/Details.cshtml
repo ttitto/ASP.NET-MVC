@@ -1,0 +1,44 @@
+﻿@model GigHub.ViewModels.GigDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Heading</h2>
+<div class="gig-details">
+    <div class="artist container">
+        <span class="artist">@Model.ArtistName</span>
+        @if (Model.Following)
+        {
+            <a href="/api/Follows" class="js-toggle-following btn btn-default" data-followed-id="@Model.ArtistId">Follow?</a>
+        }
+    </div>
+    <p class="gig-description">Performing at @Model.Venue on @Model.DateTime.ToString("d MMM") at @Model.DateTime.ToString("HH:mm").</p>
+    @if (Model.Going)
+    {
+        <p class="going-info"> You are going to this event.</p>
+    }
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function onReady() {
+            if('@Model.Following' == 'True'){
+                $('.js-toggle-following').removeClass('btn-default').addClass('btn-primary').text('Following')
+            }
+
+            $('.js-toggle-following').click(function onFollowingToggle(e) {
+                e.preventDefault();
+                var link = $(e.target);
+                $.post('/api/follows', { followedId: link.attr('data-followed-id') })
+                .done(function onSuccess(successData) {
+                    link.text('Following')
+                })
+                .fail(function onError(errorData) {
+                    alert('Something failed.')
+                })
+            });
+        });
+    </script>
+}

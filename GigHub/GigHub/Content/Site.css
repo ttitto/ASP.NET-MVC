@@ -1,4 +1,5 @@
 ﻿body {
+  font-size: 17px;
   padding-top: 90px;
   padding-bottom: 20px;
 }
@@ -81,9 +82,6 @@ span.field-validation-error {
 .navbar-brand {
   font-weight: 700;
 }
-body {
-  font-size: 17px;
-}
 body,
 h1,
 h2,
@@ -158,6 +156,9 @@ h6,
   font-weight: bold;
   display: block;
 }
+.gigs > li .details .artist .artist-name {
+  color: #333333;
+}
 .gigs > li .details .genre {
   font-size: 15px;
 }
@@ -167,6 +168,13 @@ h6,
 }
 .gigs > li:hover .actions {
   display: block;
+}
+.gig-details .artist.container {
+  padding-left: 0;
+}
+.gig-details .artist {
+  font-size: 20px;
+  font-weight: bold;
 }
 .popover-notifications .popover-content {
   padding: 0;

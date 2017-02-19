@@ -4,6 +4,7 @@
     using System.Data.Entity;
     using System.Linq;
     using System.Web.Mvc;
+    using Mapping;
     using Microsoft.AspNet.Identity;
     using Models;
     using ViewModels;
@@ -48,6 +49,12 @@
             };
 
             return this.View("Gigs", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Search(GigsViewModel viewModel)
+        {
+            return this.RedirectToAction("Index", "Home", new { searchTerm = viewModel.SearchTerm });
         }
 
         [Authorize]
@@ -128,6 +135,28 @@
 
             viewModel.Genres = this.context.Genres.ToList();
             return this.View("GigForm", "Gigs");
+        }
+
+        public ActionResult Details(int gigId)
+        {
+            var userId = User.Identity.GetUserId();
+            var gig = this.context.Gigs
+                .Where(g => g.Id == gigId)
+                .Include(g => g.Artist)
+                .Include(g => g.Attendances)
+                .FirstOrDefault();
+            var gigViewModel = gig.To<GigDetailsViewModel, Gig>();
+            if (!string.IsNullOrEmpty(userId))
+            {
+                gigViewModel.Going = null != gig.Attendances.Where(a => a.AttendeeId == userId).FirstOrDefault();
+
+                var follow = this.context.Follows
+                    .Where(f => f.FollowedId == gig.ArtistId && f.FollowerId == userId)
+                    .FirstOrDefault();
+                gigViewModel.Following = null != follow;
+            }
+
+            return this.View(gigViewModel);
         }
     }
 }

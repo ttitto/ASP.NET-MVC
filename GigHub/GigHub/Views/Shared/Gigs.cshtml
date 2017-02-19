@@ -1,9 +1,20 @@
-﻿
-@model GigHub.ViewModels.GigsViewModel
+﻿@model GigHub.ViewModels.GigsViewModel
 @{
     ViewBag.Title = "Home Page";
 }
 <h1>@Model.Heading</h1>
+@using (Html.BeginForm("Search", "Gigs"))
+{
+    <div class="form-group">
+        <div id="searchGigs" class="input-group">
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", placeholder = "Search by artist, genre or location" })
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+        </div>
+    </div>
+}
+
 <ul class="gigs voffset3">
     @foreach (var gig in Model.UpcommingGigs)
     {
@@ -14,9 +25,9 @@
             </div>
             <div class="details">
                 <div class="artist container">
-                    <span class="artist">@gig.Artist.Name</span>
+                    @Html.ActionLink(gig.Artist.Name, "Details","Gigs",new {gigId = gig.Id }, new {@class = "artist-name" })
                     @if (gig.IsCanceled)
-                            {
+                    {
                         <span class="label label-warning">Canceled</span>
                     }
                     @if (Model.ShowActions)
